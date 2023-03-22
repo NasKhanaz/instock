@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import "./WarehouseDetailsHeader.scss";
 
 function WarehouseDetailsHeader() {
@@ -21,7 +22,39 @@ function WarehouseDetailsHeader() {
       });
   }, [warehouseId]); // Use warehouseId for dependency so this request is made if the warehouseId changes
   
-  return <h1>This is the Warehouse Details Header item.</h1>;
+  if (!warehouseDetails) {
+    return <h1>Warehouse Details Loading...</h1>
+  }
+
+  return (
+    <>
+      <header className="header">
+        <img className="header__back-arrow" src={backArrow} alt="back arrow" />
+        <h1 className="header__warehouse-name">
+          {warehouseDetails.warehouse_name}
+        </h1>
+        <button className="header__edit-button--mobile">Placeholder</button>
+      </header>
+      <main className="details">
+        <div className="details__address-container">
+          <h2 className="details__heading">WAREHOUSE ADDRESS:</h2>
+          <p className="details__info">{`${warehouseDetails.address}, ${warehouseDetails.city}, ${warehouseDetails.country}`}</p>
+        </div>
+        <div className="details__contact-container">
+          <div className="details__contact-name-container">
+            <h2 className="details__heading">CONTACT NAME:</h2>
+            <p className="details__info">{warehouseDetails.contact_name}</p>
+            <p className="details__info">{warehouseDetails.contact_position}</p>
+          </div>
+          <div className="details__contact-info-container">
+            <h2 className="details__heading">CONTACT INFORMATION:</h2>
+            <p className="details__info">{warehouseDetails.contact_phone}</p>
+            <p className="details__info">{warehouseDetails.contact_email}</p>
+          </div>
+        </div>
+      </main>
+    </>
+  );
 }
 
 export default WarehouseDetailsHeader;
