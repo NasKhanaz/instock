@@ -39,7 +39,8 @@ function WarehouseDetailsHeader() {
             {warehouseDetails.warehouse_name}
           </h1>
         </div>
-          <button className="header__edit-button--mobile"></button>
+        <button className="header__edit-button--mobile"></button>
+        <button className="header__edit-button">Edit</button>
       </header>
       <main className="details">
         <div className="details__address-container">
