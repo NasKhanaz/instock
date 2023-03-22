@@ -5,6 +5,10 @@ import Warehouses from "./pages/Warehouses/Warehouses";
 import AddWarehouse from "./pages/AddWarehouse/AddWarehouse";
 import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
 import EditWarehouse from "./pages/EditWarehouse/EditWarehouse";
+import Inventory from "./pages/Inventory/Inventory";
+import AddInventoryItem from "./pages/AddInventoryItem/AddInventoryItem";
+import InventoryItemDetails from "./pages/InventoryItemDetails/InventoryItemDetails";
+import EditInventoryItem from "./pages/EditInventoryItem/EditInventoryItem";
 import "./App.scss";
 
 function App() {
