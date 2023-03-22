@@ -18,3 +18,9 @@
     font-weight: $font-weight;
     color: $color;
 }
+
+@mixin flex ($justify, $direction) {
+    display: flex;
+    justify-content: $justify;
+    flex-direction: $direction;
+}
