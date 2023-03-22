@@ -29,11 +29,17 @@ function WarehouseDetailsHeader() {
   return (
     <>
       <header className="header">
-        <img className="header__back-arrow" src={backArrow} alt="back arrow" />
-        <h1 className="header__warehouse-name">
-          {warehouseDetails.warehouse_name}
-        </h1>
-        <button className="header__edit-button--mobile">Placeholder</button>
+        <div className="header__left-container">
+          <img
+            className="header__back-arrow"
+            src={backArrow}
+            alt="back arrow"
+          />
+          <h1 className="header__warehouse-name">
+            {warehouseDetails.warehouse_name}
+          </h1>
+        </div>
+          <button className="header__edit-button--mobile"></button>
       </header>
       <main className="details">
         <div className="details__address-container">

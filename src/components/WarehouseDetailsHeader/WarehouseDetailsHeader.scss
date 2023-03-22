@@ -1,3 +1,55 @@
-@use "../../styles/partials/global";
-@use "../../styles/partials/variables";
-@use "../../styles/partials/mixins";
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 1.5rem;
+    padding-top: 2rem;
+    margin: 0rem 1.5rem;
+
+    &__left-container {
+        display: flex;
+    }
+
+    &__warehouse-name {
+        @include textStyle($primary-color-Instock-Black, 1.75rem, 2.25rem, 600);
+        margin-left: 0.75rem;
+    }
+
+    &__edit-button--mobile {
+        background-color: $primary-color-Instock-Indigo;
+        width: 36px;
+        height: 36px;
+        border-radius: 50%;
+        border: none;
+        background-image: url("../../assets/Icons/edit-24px-white.svg");
+        background-position: center;
+        background-repeat: no-repeat;
+    }
+}
+
+.details {
+    border-top: 1px solid $secondary-color-Cloud;
+    padding: 1rem 1.5rem;
+
+    &__heading {
+        @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
+        margin-bottom: 0.25rem;
+    }
+
+    &__info {
+        @include textStyle($primary-color-Instock-Black, 0.8125rem, 1.25rem, 400);
+    }
+
+    &__contact-container {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 2.25rem;
+    }
+
+    &__contact-info-container {
+        margin-right: 1.25rem;
+    }
+}

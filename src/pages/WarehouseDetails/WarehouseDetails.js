@@ -3,8 +3,7 @@ import "./WarehouseDetails.scss";
 
 function WarehouseDetails() {
   return (
-    <header>
-      <h1>This is the Warehouse Details page.</h1>
+    <header className="details-page">
       <WarehouseDetailsHeader />
     </header>
   );
