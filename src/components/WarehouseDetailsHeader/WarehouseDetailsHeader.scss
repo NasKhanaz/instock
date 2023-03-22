@@ -13,6 +13,10 @@
         margin: 0rem 2rem;
     }
 
+    @include desktop {
+        margin: 0rem 2.5rem;
+    }
+
     &__left-container {
         display: flex;
     }
@@ -70,6 +74,10 @@
         display: flex;
     }
 
+    @include desktop {
+        padding: 1.5rem 2.5rem;
+    }
+
     &__heading {
         @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
         margin-bottom: 0.25rem;
@@ -91,22 +99,38 @@
         @include tablet {
             width: 33.5%;
             margin-right: 2rem;
-            padding-right: 5%;
+        }
+    }
+
+    &__address {
+        @include tablet {
+            width: 10rem;
         }
     }
 
     &__contact-container {
         display: flex;
+        justify-content: space-between;
         margin-top: 2.25rem;
+        width: 100%;
 
         @include tablet {
             margin: 0;
             padding-left: 2.5rem;
             border-left: 1px solid $secondary-color-Cloud;
+            width: 52.5%;
+        }
+
+        @include desktop {
+            padding-right: 10%;
         }
     }
 
-    &__contact-name-container {
-        margin-right: 2.5rem;
+    &__contact-info-container {
+        margin-right: 10%;
+
+        @include tablet {
+            margin: 0;
+        }
     }
 }

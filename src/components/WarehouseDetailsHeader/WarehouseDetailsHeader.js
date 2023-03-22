@@ -45,7 +45,7 @@ function WarehouseDetailsHeader() {
       <main className="details">
         <div className="details__address-container">
           <h2 className="details__heading">WAREHOUSE ADDRESS:</h2>
-          <p className="details__info">{`${warehouseDetails.address}, ${warehouseDetails.city}, ${warehouseDetails.country}`}</p>
+          <p className="details__info details__address">{`${warehouseDetails.address}, ${warehouseDetails.city}, ${warehouseDetails.country}`}</p>
         </div>
         <div className="details__contact-container">
           <div className="details__contact-name-container">
