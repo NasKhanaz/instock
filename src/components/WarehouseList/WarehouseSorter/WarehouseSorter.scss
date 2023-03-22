@@ -1,0 +1,41 @@
+@use "../../../styles/partials/global" as *;
+@use "../../../styles/partials/variables" as *;
+@use "../../../styles/partials/mixins" as *;
+
+
+.temp {
+    padding: 0 1rem;
+}
+
+.sorter {
+    display: none;
+
+    @include tablet {
+        @include flex (space-between, row);
+        box-sizing: border-box;
+        padding: .6875rem 2rem;
+        height: 2.5rem;
+    }
+
+    &__heading {
+        @include flex (space-between, row);
+    }
+
+
+    &__text {
+        @include flex (center, column);
+
+        &-p{
+            @include textStyle($secondary-color-Slate, .75rem, 1.125rem, 600);
+        }
+    }
+
+    &__icon {
+        @include flex (center, column);
+        margin-left: .25rem;
+        
+        &-icon {
+            height: .75rem;
+        }
+    }
+}
