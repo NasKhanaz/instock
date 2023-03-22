@@ -31,13 +31,11 @@ function InventoryListCard() {
 
     <main> 
         <div className="inventory__category-selector--wider"></div>
-        {/* <div className="inventory__divider"></div> */}
         <div className="inventory__listcard">
             <div className="inventory__left-box">
                 <div className="inventory__item-container">
                     <h2 className="inventory__item">INVENTORY ITEM</h2>
                     <div className="inventory__item-link">
-                        <div className="inventory__text-link--mobile">{"test"}</div>
                         <div className="inventory__text-link">{"test"}</div>
                         <img 
                         className="inventory__img-chevron"

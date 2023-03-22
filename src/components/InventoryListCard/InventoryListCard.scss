@@ -15,14 +15,20 @@
 
     &__listcard{
         border-top: 1px solid $secondary-color-Cloud;
+        display: flex;
+        flex-wrap: wrap;
+        padding-top: 0.5rem;
     }
 
     &__left-box {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
 
     }
 
     &__item-container {
-
+        margin-bottom: 1rem;
     }
 
     &__item {
@@ -30,16 +36,14 @@
         margin-bottom: 0.25rem;
     }
 
-    &__text-link--mobile {
-        color: $primary-color-Instock-Indigo;
-
-        @include tablet {
-            display: none;
-        }
+    &__item-link {
+        display: flex;
+       
+        
     }
 
     &__text-link {
-        display: none;
+        color: $primary-color-Instock-Indigo;
 
         @include tablet {
             color: $primary-color-Instock-Indigo;
@@ -54,6 +58,17 @@
 
     &__catgory-render {
         @include textStyle($primary-color-Instock-Black, 0.875rem, 1.375rem, 400);
+    }
+
+    &__status-container {
+        margin-bottom: 1rem;
+    }
+
+     &__middle-box {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
     }
 
     &__status {
@@ -91,6 +106,10 @@
         }
     }
 
+    &__qty-container {
+        margin-bottom: 1rem;
+    }
+
     &__qty {
         @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
         margin-bottom: 0.25rem;
@@ -100,6 +119,14 @@
         @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
         margin-bottom: 0.25rem;
     }
+
+    &__right-box {
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
 
 } 
 
