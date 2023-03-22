@@ -1,0 +1,107 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+.inventory {
+
+    &__category-selector-wider {
+
+}
+
+    // &__divider {
+
+    // }
+
+    &__listcard{
+        border-top: 1px solid $secondary-color-Cloud;
+    }
+
+    &__left-box {
+
+    }
+
+    &__item-container {
+
+    }
+
+    &__item {
+        @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
+        margin-bottom: 0.25rem;
+    }
+
+    &__text-link--mobile {
+        color: $primary-color-Instock-Indigo;
+
+        @include tablet {
+            display: none;
+        }
+    }
+
+    &__text-link {
+        display: none;
+
+        @include tablet {
+            color: $primary-color-Instock-Indigo;
+            display: contents;
+        }
+    }
+
+    &__category {
+        @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
+        margin-bottom: 0.25rem;
+    }
+
+    &__catgory-render {
+        @include textStyle($primary-color-Instock-Black, 0.875rem, 1.375rem, 400);
+    }
+
+    &__status {
+         @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
+        margin-bottom: 0.25rem;
+    }
+
+    &__status-tag {
+        color: $supporting-color-Green;
+        background-color: $supporting-color-Green;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        width: 7rem;
+        height: 1.5rem;
+        opacity: 7%;
+        border-radius: 1.25rem;
+
+        @include tablet {
+            height: 1.625rem;
+        }
+    }
+
+    &__status-tag--out {
+        color: $supporting-color-Red;
+        background-color: $supporting-color-Red;
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        width: 7rem; 
+        height: 1.5rem;
+        opacity: 7%;
+        border-radius: 1.25rem;
+
+        @include tablet {
+            height: 1.625rem;
+        }
+    }
+
+    &__qty {
+        @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
+        margin-bottom: 0.25rem;
+    }
+
+    &__warehouse {
+        @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
+        margin-bottom: 0.25rem;
+    }
+
+} 
+
+
+

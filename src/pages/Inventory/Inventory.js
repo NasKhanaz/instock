@@ -1,7 +1,11 @@
+import InventoryListCard from "../../components/InventoryListCard/InventoryListCard";
 import "./Inventory.scss";
 
 function Inventory() {
-  return <h1>This is the Inventory page.</h1>;
+
+  return (
+      <InventoryListCard/>
+  )
 }
 
 export default Inventory;
