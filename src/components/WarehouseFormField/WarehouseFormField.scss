@@ -1,0 +1,25 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.form-field-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.form-field-label {
+    @include textStyle($primary-color-Instock-Black, 0.8125rem, 1.25rem, 600);
+    margin-bottom: 0.25rem;
+}
+
+.form-field-input {
+    height: 36px;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    border: 1px solid $secondary-color-Cloud;
+    margin-bottom: 1rem;
+
+    &::placeholder {
+        @include textStyle($secondary-color-Slate, 0.8125rem, 1.25rem, 400);
+    }
+}
