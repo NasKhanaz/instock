@@ -9,6 +9,7 @@ import Inventory from "./pages/Inventory/Inventory";
 import AddInventoryItem from "./pages/AddInventoryItem/AddInventoryItem";
 import InventoryItemDetails from "./pages/InventoryItemDetails/InventoryItemDetails";
 import EditInventoryItem from "./pages/EditInventoryItem/EditInventoryItem";
+import NotFound from "./pages/NotFound/NotFound";
 import "./App.scss";
 
 function App() {
