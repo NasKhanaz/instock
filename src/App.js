@@ -1,6 +1,10 @@
 import { BrowserRouter, Routes, Route} from "react-router-dom";
 import Header from "./components/Header/Header";
 import Footer from "./components/Footer/Footer";
+import Warehouses from "./pages/Warehouses/Warehouses";
+import AddWarehouse from "./pages/AddWarehouse/AddWarehouse";
+import WarehouseDetails from "./pages/WarehouseDetails/WarehouseDetails";
+import EditWarehouse from "./pages/EditWarehouse/EditWarehouse";
 import "./App.scss";
 
 function App() {
@@ -8,30 +12,30 @@ function App() {
     <BrowserRouter>
       <Header />
       <Routes>
-        <Route path="/" element={<WarehousesPage />} />
-        <Route path="/warehouses/add" element={<WarehouseAddPage />} />
+        <Route path="/" element={<Warehouses />} />
+        <Route path="/warehouses/add" element={<AddWarehouse />} />
         <Route
           path="/warehouses/:warehouseId"
-          element={<WarehouseDetailsPage />}
+          element={<WarehouseDetails />}
         />
         <Route
           path="/warehouses/:warehouseId/edit"
-          element={<WarehouseEditPage />}
+          element={<EditWarehouse />}
         />
-        <Route path="/inventory" element={<InventoryPage />} />
+        <Route path="/inventory" element={<Inventory />} />
+        <Route
+          path="/inventory/add"
+          element={<AddInventoryItem />}
+        />
         <Route
           path="/inventory/:itemId"
-          element={<InventoryItemDetailsPage />}
+          element={<InventoryItemDetails />}
         />
         <Route
           path="/inventory/:itemId/edit"
-          element={<InventoryItemEditPage />}
+          element={<EditInventoryItem />}
         />
-        <Route
-          path="/inventory/add"
-          element={<InventoryItemAddPage />}
-        />
-        <Route path="*" element={<NotFoundPage />} />
+        <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />
     </BrowserRouter>
