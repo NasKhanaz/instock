@@ -1,8 +1,8 @@
 import "./FormCTAButton.scss";
 
-function FormCTAButton({ className, buttonText }) {
+function FormCTAButton({ className, buttonText, type, action }) {
   return (
-      <button className={`form-cta-button ${className}`}>{buttonText}</button>
+      <button onClick={action} type={type} className={`form-cta-button ${className}`}>{buttonText}</button>
   );
 }
 

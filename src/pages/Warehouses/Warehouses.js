@@ -1,7 +1,8 @@
+import { Link } from "react-router-dom";
 import "./Warehouses.scss";
 
 function Warehouses() {
-  return <h1>This is the Warehouses page.</h1>;
+  return <Link to="/warehouses/add">This is the Warehouses page</ Link>;
 }
 
 export default Warehouses;
