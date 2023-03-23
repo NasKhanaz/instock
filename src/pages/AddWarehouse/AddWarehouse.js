@@ -45,6 +45,8 @@ function AddWarehouse() {
     !contactName ? setValidContactName(false) : setValidContactName(true);
     !position ? setValidPosition(false) : setValidPosition(true);
 
+    const phoneRegexValidation = /^(\+\d+)\s\(\d{3}\)\s\d{3}-\d{4}$/; // Use a regex expression to check for desired phone number format
+    !phoneNumber.match(phoneRegexValidation) ? setValidPhoneNumber(false) : setValidPhoneNumber(true);
   }
 
   const handleSubmit = (event) => {

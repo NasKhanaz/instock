@@ -24,9 +24,14 @@ function ContactDetailsFormSection(props) {
         }
       />
       <WarehouseFormField
-        labelText={"Phone Number"}
+        labelText={props.validPhoneNumber ? "Phone Number" : "Phone Number: Format of +1 (123) 456-7890"}
         state={props.phoneNumber}
         setState={props.setPhoneNumber}
+        extraInputClassName={
+          props.validPhoneNumber
+            ? ""
+            : "form-field-input--error"
+        }
       />
       <WarehouseFormField
         labelText={"Email"}
