@@ -16,7 +16,7 @@ export default function WarehouseListItem({ warehouse }) {
                                 <p className="wh-ls-item__button-span-text">{warehouse.warehouse_name}</p>
                             </span>
                             <span className="wh-ls-item__button-span">
-                                <img src={chevronRightIcon} className="wh-ls-item__button-span-image" />
+                                <img src={chevronRightIcon} className="wh-ls-item__button-span-image" alt="chevron-right-icon" />
                             </span>
                         </button>
                     </div>
@@ -40,10 +40,10 @@ export default function WarehouseListItem({ warehouse }) {
                 </div>
                 <div className="wh-ls-item__icons">
                     <div className="wh-ls-item__icons-delete">
-                        <img src={deleteIcon} />
+                        <img src={deleteIcon} alt="delete-icon" />
                     </div>
                     <div className="wh-ls-item__icons-edit">
-                        <img src={editIcon} />
+                        <img src={editIcon} alt="edit-icon" />
                     </div>
                 </div>
 
