@@ -1,0 +1,14 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.warehouse-details-section {
+    border-top: 1px solid $secondary-color-Cloud;
+    padding: 0rem 1.5rem;
+
+    &__title {
+        @include textStyle($primary-color-Instock-Black, 1.25rem, 1.75rem, 600);
+        margin-top: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
