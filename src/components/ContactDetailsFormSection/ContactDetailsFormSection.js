@@ -2,34 +2,30 @@ import { useState } from "react";
 import WarehouseFormField from "../WarehouseFormField/WarehouseFormField";
 import "./ContactDetailsFormSection.scss";
 
-function ContactDetailsFormSection() {
-  const [contactName, setContactName] = useState("");
-  const [position, setPosition] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
+function ContactDetailsFormSection(props) {
 
   return (
     <section className="contact-details-section">
       <h1 className="contact-details-section__title">Contact Details</h1>
       <WarehouseFormField
         labelText={"Contact Name"}
-        state={contactName}
-        setState={setContactName}
+        state={props.contactName}
+        setState={props.setContactName}
       />
       <WarehouseFormField
         labelText={"Position"}
-        state={position}
-        setState={setPosition}
+        state={props.position}
+        setState={props.setPosition}
       />
       <WarehouseFormField
         labelText={"Phone Number"}
-        state={phoneNumber}
-        setState={setPhoneNumber}
+        state={props.phoneNumber}
+        setState={props.setPhoneNumber}
       />
       <WarehouseFormField
         labelText={"Email"}
-        state={email}
-        setState={setEmail}
+        state={props.email}
+        setState={props.setEmail}
         extraInputClassName={"form-field-input--last"}
       />
     </section>

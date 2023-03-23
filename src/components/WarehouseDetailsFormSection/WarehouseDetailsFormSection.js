@@ -2,30 +2,31 @@ import { useState } from "react";
 import WarehouseFormField from "../WarehouseFormField/WarehouseFormField";
 import "./WarehouseDetailsFormSection.scss";
 
-function WarehouseDetailsFormSection() {
-  const [warehouseName, setWarehouseName] = useState("");
-  const [streetAddress, setStreetAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
+function WarehouseDetailsFormSection(props) {
 
   return (
     <section className="warehouse-details-section">
       <h1 className="warehouse-details-section__title">Warehouse Details</h1>
       <WarehouseFormField
         labelText={"Warehouse Name"}
-        state={warehouseName}
-        setState={setWarehouseName}
+        state={props.warehouseName}
+        setState={props.setWarehouseName}
+        extraInputClassName={props.validWarehouseName ? "" : "form-field-input--error"}
       />
       <WarehouseFormField
         labelText={"Street Address"}
-        state={streetAddress}
-        setState={setStreetAddress}
+        state={props.streetAddress}
+        setState={props.setStreetAddress}
       />
-      <WarehouseFormField labelText={"City"} state={city} setState={setCity} />
+      <WarehouseFormField
+        labelText={"City"}
+        state={props.city}
+        setState={props.setCity}
+      />
       <WarehouseFormField
         labelText={"Country"}
-        state={country}
-        setState={setCountry}
+        state={props.country}
+        setState={props.setCountry}
         extraInputClassName={"form-field-input--last"}
       />
     </section>
