@@ -26,6 +26,7 @@ function WarehouseDetailsFormSection() {
         labelText={"Country"}
         state={country}
         setState={setCountry}
+        extraInputClassName={"form-field-input--last"}
       />
     </section>
   );

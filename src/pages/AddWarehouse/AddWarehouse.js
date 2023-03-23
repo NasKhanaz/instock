@@ -16,8 +16,10 @@ function AddWarehouse() {
         <h1 className="new-warehouse-header__title">Add New Warehouse</h1>
       </header>
       <form className="new-warehouse-form">
-        <WarehouseDetailsFormSection />
-        <ContactDetailsFormSection />
+        <div className="new-warehouse-form__input-sections">
+          <WarehouseDetailsFormSection />
+          <ContactDetailsFormSection />
+        </div>
         <div className="new-warehouse-form__buttons-container">
           <FormCTAButton
             className={"form-cta-button--secondary"}

@@ -21,11 +21,16 @@ function ContactDetailsFormSection() {
         state={position}
         setState={setPosition}
       />
-      <WarehouseFormField labelText={"Phone Number"} state={phoneNumber} setState={setPhoneNumber} />
+      <WarehouseFormField
+        labelText={"Phone Number"}
+        state={phoneNumber}
+        setState={setPhoneNumber}
+      />
       <WarehouseFormField
         labelText={"Email"}
         state={email}
         setState={setEmail}
+        extraInputClassName={"form-field-input--last"}
       />
     </section>
   );

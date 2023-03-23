@@ -19,6 +19,17 @@
     border: 1px solid $secondary-color-Cloud;
     margin-bottom: 1rem;
 
+    @include tablet {
+        height: 38px;
+        margin-bottom: 1.5rem;
+    }
+
+    &--last {
+        @include tablet {
+            margin-bottom: 0.5rem;
+        }
+    }
+
     &::placeholder {
         @include textStyle($secondary-color-Slate, 0.8125rem, 1.25rem, 400);
     }
