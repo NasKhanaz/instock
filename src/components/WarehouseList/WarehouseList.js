@@ -8,10 +8,6 @@ import { useState, useEffect } from "react";
 
 import axios from "axios";
 
-
-
-const uniqid = require('uniqid');
-
 export default function WarehouseList() {
 
     const [warehouseData, setWarehouseData] = useState([]);
@@ -23,12 +19,13 @@ export default function WarehouseList() {
             })
     }, []);
 
+
     return (
         <>
             <WarehouseListHeader />
             <WarehouseSorter />
             {warehouseData.map((warehouse) => (
-                < WarehouseListItem key={uniqid()} warehouse={warehouse} />
+                < WarehouseListItem key={warehouse.id} warehouse={warehouse} />
             ))
             }
         </>
