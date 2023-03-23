@@ -1,7 +1,7 @@
 import "./Inventory.scss"
-import "../../components/WarehouseList/WarehouseListHeader/WarehouseListHeader.scss"
+import "../../components/InventoryListHeader/InventoryListHeader.scss"
 import "../../components/InventoryList/InventoryList.scss"
-import WarehouseListHeader from "../../components/WarehouseList/WarehouseListHeader/WarehouseListHeader" 
+import InventoryListHeader from "../../components/InventoryListHeader/InventoryListHeader" 
 import InventoryList from "../../components/InventoryList/InventoryList";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -30,7 +30,7 @@ function Inventory() {
 
   return (
     <>
-      <WarehouseListHeader/>
+      <InventoryListHeader/>
       <InventoryList inventoryArray={inventoryDetails}/>
     </>
   );

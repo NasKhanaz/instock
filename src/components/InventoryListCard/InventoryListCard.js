@@ -15,7 +15,7 @@ function InventoryListCard({ id, name, warehouse, category, status, quantity}) {
                 <div className="inventory__item-container">
                     <h2 className="inventory__item">INVENTORY ITEM</h2>
                     <div className="inventory__item-link">
-                        <div className="inventory__text-link">{"test-item"}</div>
+                        <div className="inventory__text-link">{name}</div>
                         <img 
                         className="inventory__img-chevron"
                         src={chevronIcon}
@@ -25,21 +25,21 @@ function InventoryListCard({ id, name, warehouse, category, status, quantity}) {
                 </div>
                 <div className="inventory__category-container">
                     <h2 className="inventory__category">CATEGORY</h2>
-                    <p className="inventory__category-render">{"test-category"}</p>
+                    <p className="inventory__category-render">{category}</p>
                 </div>
             </div>
             <div className="inventory__middle-box">
                 <div className="inventory__status-container">
                     <h2 className="inventory__status">STATUS</h2>
-                    <div className="inventory__status-tag">{"test-status"}</div>
+                    <div className="inventory__status-tag">{status}</div>
                 </div>
                  <div className="inventory__qty-container">
                     <h2 className="inventory__qty">QTY</h2>
-                    <p className="inventory__qty-count">{"test-qty"}</p>
+                    <p className="inventory__qty-count">{quantity}</p>
                 </div>
                 <div className="inventory__warehouse-container">
                     <h2 className="inventory__warehouse">WAREHOUSE</h2>
-                    <p className="inventory__warehouse-render">{"test-warehouse"}</p>
+                    <p className="inventory__warehouse-render">{warehouse}</p>
                 </div>
             </div>
             <div className="inventory__right-box">
