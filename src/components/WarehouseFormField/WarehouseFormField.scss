@@ -22,4 +22,9 @@
     &::placeholder {
         @include textStyle($secondary-color-Slate, 0.8125rem, 1.25rem, 400);
     }
+
+    &:focus {
+        border: none;
+        outline: 1px solid $primary-color-Instock-Indigo;
+    }
 }
