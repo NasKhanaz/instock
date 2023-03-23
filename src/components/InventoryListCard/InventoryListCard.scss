@@ -5,25 +5,56 @@
 
 .inventory {
 
-    &__category-selector-wider {
+    &__category-selector--wider {
+        display: none;
 
-}
+        @include tablet {
+            @include textStyle($secondary-color-Slate, 0.75rem, 1.125rem, 600);
+            display: contents;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: $background-color-Light-Grey;
+            height: 2rem;
 
-    // &__divider {
+        }
+   
+    }
 
-    // }
+    &__toggle {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
 
-    &__listcard{
+
+    &__listcard {
+        @include textStyle($primary-color-Instock-Black, 0.875rem, 1.375rem, 400);
         border-top: 1px solid $secondary-color-Cloud;
         display: flex;
         flex-wrap: wrap;
         padding-top: 0.5rem;
+
+        @include tablet {
+            border-top: none;
+            border-bottom: 1px solid $secondary-color-Cloud;
+            flex-wrap: none;
+            align-items: center;
+            justify-content: space-between;
+            
+        }
     }
 
     &__left-box {
         display: flex;
         flex-direction: column;
         width: 50%;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+        }
 
     }
 
@@ -34,11 +65,14 @@
     &__item {
         @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
         margin-bottom: 0.25rem;
+
+        @include tablet {
+            display: none;
+        }
     }
 
     &__item-link {
         display: flex;
-       
         
     }
 
@@ -54,6 +88,10 @@
     &__category {
         @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
         margin-bottom: 0.25rem;
+
+        @include tablet {
+            display: none;
+        }
     }
 
     &__catgory-render {
@@ -62,6 +100,7 @@
 
     &__status-container {
         margin-bottom: 1rem;
+        width: 10rem;
     }
 
      &__middle-box {
@@ -69,11 +108,21 @@
         flex-direction: column;
         width: 50%;
 
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            align-items: center;
+        }
     }
 
     &__status {
          @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
         margin-bottom: 0.25rem;
+
+        @include tablet {
+            display: none;
+        }
     }
 
     &__status-tag {
@@ -113,11 +162,19 @@
     &__qty {
         @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
         margin-bottom: 0.25rem;
+
+        @include tablet {
+            display: none;
+        }
     }
 
     &__warehouse {
         @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
         margin-bottom: 0.25rem;
+
+        @include tablet {
+            display: none;
+        }
     }
 
     &__right-box {
@@ -125,6 +182,15 @@
         display: flex;
         justify-content: space-between;
         width: 100%;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            align-items: center;
+            width: 5rem;
+            
+        }
     }
 
 
