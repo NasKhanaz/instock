@@ -1,5 +1,7 @@
 import "./Inventory.scss"
+import "../../components/WarehouseList/WarehouseListHeader/WarehouseListHeader.scss"
 import "../../components/InventoryList/InventoryList.scss"
+import WarehouseListHeader from "../../components/WarehouseList/WarehouseListHeader/WarehouseListHeader" 
 import InventoryList from "../../components/InventoryList/InventoryList";
 import axios from "axios";
 import { useState, useEffect } from "react";
@@ -13,6 +15,7 @@ function Inventory() {
        .get("http://localhost:8080/inventory")
        .then((response) => {
          if (response.status === 200) {
+            console.log(response);
             setInventoryDetails(response.data);
          }
          })
@@ -26,10 +29,10 @@ function Inventory() {
   }
 
   return (
-
-      // <InventoryHeader/>
+    <>
+      <WarehouseListHeader/>
       <InventoryList inventoryArray={inventoryDetails}/>
-
+    </>
   );
 }
 
