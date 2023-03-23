@@ -1,4 +1,3 @@
-import { useState } from "react";
 import WarehouseFormField from "../WarehouseFormField/WarehouseFormField";
 import "./ContactDetailsFormSection.scss";
 
@@ -24,20 +23,24 @@ function ContactDetailsFormSection(props) {
         }
       />
       <WarehouseFormField
-        labelText={props.validPhoneNumber ? "Phone Number" : "Phone Number: Format of +1 (123) 456-7890"}
+        labelText={
+          props.validPhoneNumber
+            ? "Phone Number"
+            : "Phone Number: Format of +1 (123) 456-7890"
+        }
         state={props.phoneNumber}
         setState={props.setPhoneNumber}
         extraInputClassName={
-          props.validPhoneNumber
-            ? ""
-            : "form-field-input--error"
+          props.validPhoneNumber ? "" : "form-field-input--error"
         }
       />
       <WarehouseFormField
         labelText={"Email"}
         state={props.email}
         setState={props.setEmail}
-        extraInputClassName={"form-field-input--last"}
+        extraInputClassName={`form-field-input--last ${
+          props.validEmail ? "" : "form-field-input--error"
+        }`}
       />
     </section>
   );

@@ -1,4 +1,3 @@
-import { useState } from "react";
 import WarehouseFormField from "../WarehouseFormField/WarehouseFormField";
 import "./WarehouseDetailsFormSection.scss";
 
