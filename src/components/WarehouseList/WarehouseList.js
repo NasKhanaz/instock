@@ -30,9 +30,7 @@ export default function WarehouseList() {
             {warehouseData.map((warehouse) => (
                 < WarehouseListItem key={uniqid()} warehouse={warehouse} />
             ))
-
-
-            };
+            }
         </>
 
     )
