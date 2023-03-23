@@ -45,18 +45,3 @@ export default Inventory;
 
 
 
-
-
-
-// import InventoryList from "../../components/InventoryList/InventoryList";
-// import React from 'react';
-// // import "../../components/InventoryList.scss";
-
-// function Inventory() {
-
-//   return (
-//       <InventoryList/>
-//   )
-// }
-
-// export default Inventory;
