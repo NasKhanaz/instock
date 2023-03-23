@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
+import axios from "axios";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import ContactDetailsFormSection from "../../components/ContactDetailsFormSection/ContactDetailsFormSection";
 import FormCTAButton from "../../components/FormCTAButton/FormCTAButton";
@@ -80,10 +81,29 @@ function AddWarehouse() {
     event.preventDefault();
     validateForm();
     if (validForm) {
-      setFormSubmissionSucessful(true);
-      setTimeout(() => {
-        navigate("/");
-      }, 5000);
+      axios.post("http://localhost:8080/warehouses", {
+        warehouse_name: warehouseName,
+        address: streetAddress,
+        city,
+        country,
+        contact_name: contactName,
+        contact_position: position,
+        contact_phone: phoneNumber,
+        contact_email: email,
+      })
+      .then((response) => {
+        if (response.status === 201) {
+          setFormSubmissionSucessful(true);
+          setTimeout(() => {
+            navigate("/");
+          }, 5000);
+        } else {
+          console.log(response);
+        }
+      })
+      .catch((error) => {
+        console.log(error);
+      });
     }
   };
 
