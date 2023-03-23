@@ -17,7 +17,7 @@ export default function WarehouseList() {
     const [warehouseData, setWarehouseData] = useState([]);
 
     useEffect(() => {
-        axios.get("http://localhost:8080")
+        axios.get("http://localhost:8080/warehouses")
             .then((response) => {
                 setWarehouseData(response.data);
             })
