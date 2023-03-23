@@ -19,6 +19,10 @@
     border: 1px solid $secondary-color-Cloud;
     margin-bottom: 1rem;
 
+    &--error {
+        border: 1px solid $supporting-color-Red;
+    }
+
     @include tablet {
         height: 38px;
         margin-bottom: 1.5rem;
