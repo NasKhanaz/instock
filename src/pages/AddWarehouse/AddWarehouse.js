@@ -34,8 +34,22 @@ function AddWarehouse() {
     navigate(-1); // Navigates the user to the previous page
   }
 
+  const isFormValid = () => {
+    // Check warehouse details form fields
+    !warehouseName ? setValidWarehouseName(false) : setValidWarehouseName(true);
+    !streetAddress ? setValidAddress(false) : setValidAddress(true);
+    !city ? setValidCity(false) : setValidCity(true);
+    !country ? setValidCountry(false) : setValidCountry(true);
+
+    // Check contact details form fields
+    !contactName ? setValidContactName(false) : setValidContactName(true);
+    !position ? setValidPosition(false) : setValidPosition(true);
+
+  }
+
   const handleSubmit = (event) => {
     event.preventDefault();
+    (isFormValid());
   };
 
   return (

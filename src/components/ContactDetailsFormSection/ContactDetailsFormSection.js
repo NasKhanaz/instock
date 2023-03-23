@@ -11,11 +11,17 @@ function ContactDetailsFormSection(props) {
         labelText={"Contact Name"}
         state={props.contactName}
         setState={props.setContactName}
+        extraInputClassName={
+          props.validContactName ? "" : "form-field-input--error"
+        }
       />
       <WarehouseFormField
         labelText={"Position"}
         state={props.position}
         setState={props.setPosition}
+        extraInputClassName={
+          props.validPosition ? "" : "form-field-input--error"
+        }
       />
       <WarehouseFormField
         labelText={"Phone Number"}

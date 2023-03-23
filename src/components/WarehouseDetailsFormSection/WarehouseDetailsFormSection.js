@@ -11,23 +11,31 @@ function WarehouseDetailsFormSection(props) {
         labelText={"Warehouse Name"}
         state={props.warehouseName}
         setState={props.setWarehouseName}
-        extraInputClassName={props.validWarehouseName ? "" : "form-field-input--error"}
+        extraInputClassName={
+          props.validWarehouseName ? "" : "form-field-input--error"
+        }
       />
       <WarehouseFormField
         labelText={"Street Address"}
         state={props.streetAddress}
         setState={props.setStreetAddress}
+        extraInputClassName={
+          props.validAddress ? "" : "form-field-input--error"
+        }
       />
       <WarehouseFormField
         labelText={"City"}
         state={props.city}
         setState={props.setCity}
+        extraInputClassName={props.validCity ? "" : "form-field-input--error"}
       />
       <WarehouseFormField
         labelText={"Country"}
         state={props.country}
         setState={props.setCountry}
-        extraInputClassName={"form-field-input--last"}
+        extraInputClassName={`form-field-input--last ${
+          props.validCity ? "" : "form-field-input--error"
+        }`}
       />
     </section>
   );
