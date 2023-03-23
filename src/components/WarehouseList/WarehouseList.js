@@ -1,11 +1,13 @@
 import "./WarehouseList.scss";
 
+import WarehouseListHeader from "./WarehouseListHeader/WarehouseListHeader";
 import WarehouseSorter from "./WarehouseSorter/WarehouseSorter";
 import WarehouseListItem from "./WarehouseListItem/WarehouseListItem";
 
 import { useState, useEffect } from "react";
 
 import axios from "axios";
+
 
 
 const uniqid = require('uniqid');
@@ -23,6 +25,7 @@ export default function WarehouseList() {
 
     return (
         <>
+            <WarehouseListHeader />
             <WarehouseSorter />
             {warehouseData.map((warehouse) => (
                 < WarehouseListItem key={uniqid()} warehouse={warehouse} />
