@@ -116,9 +116,19 @@
         }
 
         &-delete {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
+
             @include tablet {
                 margin-right: 1rem;
             }
+        }
+
+        &-edit {
+            background-color: transparent;
+            border: none;
+            cursor: pointer;
         }
     }
 
