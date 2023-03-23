@@ -29,12 +29,17 @@ function AddWarehouse() {
   const [validPhoneNumber, setValidPhoneNumber] = useState(true);
   const [validEmail, setValidEmail] = useState(true);
 
+  const [validForm, setValidForm] = useState(false);
+
+  // Determine when form submission is successful in order to toggle sucess message
+  const [formSubmissionSucessful, setFormSubmissionSucessful] = useState(false);
+
 
   function handleClick() {
     navigate(-1); // Navigates the user to the previous page
   }
 
-  const isFormValid = () => {
+  const validateForm = () => {
     // Check warehouse details form fields
     !warehouseName ? setValidWarehouseName(false) : setValidWarehouseName(true);
     !streetAddress ? setValidAddress(false) : setValidAddress(true);
@@ -64,11 +69,22 @@ function AddWarehouse() {
     !email.match(emailRegexValidation)
       ? setValidEmail(false)
       : setValidEmail(true);
-  }
+
+    // Check that every field is valid
+    if (validWarehouseName && validAddress && validCity && validCountry && validContactName && validPosition && validPhoneNumber && validEmail) {
+        setValidForm(true);
+      }
+    };
 
   const handleSubmit = (event) => {
     event.preventDefault();
-    (isFormValid());
+    validateForm();
+    if (validForm) {
+      setFormSubmissionSucessful(true);
+      setTimeout(() => {
+        navigate("/");
+      }, 5000);
+    }
   };
 
   return (
@@ -97,19 +113,19 @@ function AddWarehouse() {
             validCity={validCity}
             validCountry={validCountry}
           />
-          <ContactDetailsFormSection 
-          contactName={contactName}
-          setContactName={setContactName}
-          position={position}
-          setPosition={setPosition}
-          phoneNumber={phoneNumber}
-          setPhoneNumber={setPhoneNumber}
-          email={email}
-          setEmail={setEmail}
-          validContactName={validContactName}
-          validPosition={validPosition}
-          validPhoneNumber={validPhoneNumber}
-          validEmail={validEmail}
+          <ContactDetailsFormSection
+            contactName={contactName}
+            setContactName={setContactName}
+            position={position}
+            setPosition={setPosition}
+            phoneNumber={phoneNumber}
+            setPhoneNumber={setPhoneNumber}
+            email={email}
+            setEmail={setEmail}
+            validContactName={validContactName}
+            validPosition={validPosition}
+            validPhoneNumber={validPhoneNumber}
+            validEmail={validEmail}
           />
         </div>
         <div className="new-warehouse-form__buttons-container">
@@ -126,6 +142,13 @@ function AddWarehouse() {
           />
         </div>
       </form>
+      <h2
+        className={
+          formSubmissionSucessful
+            ? "new-warehouse-form__message--success"
+            : "new-warehouse-form__message"
+        }
+      >The new warehouse has successfully been added! Please wait, returning to warehoues page...</h2>
     </div>
   );
 }
