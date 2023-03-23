@@ -19,6 +19,10 @@
             @include textStyle($primary-color-White, 0.875rem, 1.375rem, 600);
         }
 
+        @include desktop {
+            width: 14.65%;
+        }
+
         &:hover {
             background-color: $primary-color-Instock-Black;
         }
@@ -32,6 +36,10 @@
         @include tablet {
             width: 11.25%;
             @include textStyle($secondary-color-Slate, 0.875rem, 1.375rem, 600);
+        }
+
+        @include desktop {
+            width: 7.65%;
         }
 
         &:hover {

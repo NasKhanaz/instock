@@ -49,6 +49,10 @@
             border-top: 1px solid $secondary-color-Cloud;
             padding: 1.5rem 0rem;
         }
+
+        @include desktop {
+            padding: 2.625rem 0rem 0.375rem 0rem;
+        }
     }
 
     &__buttons-container {
@@ -63,6 +67,10 @@
             margin: 0;
             padding: 1rem 2rem;
             justify-content: flex-end;
+        }
+
+        @include desktop {
+            padding: 1rem 2.5rem;
         }
     }
 }
