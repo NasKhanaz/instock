@@ -1,5 +1,6 @@
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import ContactDetailsFormSection from "../../components/ContactDetailsFormSection/ContactDetailsFormSection";
+import FormCTAButton from "../../components/FormCTAButton/FormCTAButton";
 import WarehouseDetailsFormSection from "../../components/WarehouseDetailsFormSection/WarehouseDetailsFormSection";
 import "./AddWarehouse.scss";
 
@@ -17,6 +18,16 @@ function AddWarehouse() {
       <form className="new-warehouse-form">
         <WarehouseDetailsFormSection />
         <ContactDetailsFormSection />
+        <div className="new-warehouse-form__buttons-container">
+          <FormCTAButton
+            className={"form-cta-button--secondary"}
+            buttonText={"Cancel"}
+          />
+          <FormCTAButton
+            className={"form-cta-button--primary"}
+            buttonText={"+ Add Warehouse"}
+          />
+        </div>
       </form>
     </div>
   );
