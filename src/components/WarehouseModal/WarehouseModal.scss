@@ -1,0 +1,65 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+.modal {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, .1);
+    @include flex(center, column);
+    align-items: center;
+
+    &__content {
+        height: 100%;
+        padding: 1.5rem 1rem;
+        background-color: $primary-color-White;
+    }
+
+    &__header {
+        margin: 2.25rem 0 1rem 0;
+
+        &-title {
+            @include textStyle($primary-color-Instock-Black, 1.75rem, 2.25rem, 600);
+        }
+    }
+
+    &__body {
+        &-p {
+            @include textStyle($primary-color-Instock-Black, 0.9375rem, 1.625rem, 400);
+        }
+    }
+
+    &__footer {
+        @include flex(space-between, row);
+        position: fixed;
+        bottom: 0;
+        left: 1rem;
+        right: 1rem;
+        padding-bottom: 1.5rem;
+    }
+
+    &__cancel {
+        @include textStyle($secondary-color-Slate, 0.8125rem, 1.25rem, 600);
+        height: 2.25rem;
+        width: 47.52%;
+        border: 1px solid $secondary-color-Cloud;
+        border-radius: 1.25rem;
+        background-color: $primary-color-White;
+        cursor: pointer;
+        padding: 0 1rem;
+    }
+
+    &__delete {
+        @include textStyle($primary-color-White, 0.8125rem, 1.25rem, 600);
+        height: 2.25rem;
+        width: 47.52%;
+        border-radius: 1.25rem;
+        background-color: $supporting-color-Red;
+        border: none;
+        cursor: pointer;
+        padding: 0 1rem;
+    }
+}
