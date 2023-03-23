@@ -5,12 +5,25 @@
 
 .inventory {
 
+    padding-left: 1rem;
+    padding-right: 1rem;
+
     &__listcard {
         @include textStyle($primary-color-Instock-Black, 0.875rem, 1.375rem, 400);
         border-top: 1px solid $secondary-color-Cloud;
+        width: 100%;
+        background-color: $primary-color-White;
         display: flex;
         flex-wrap: wrap;
-        padding-top: 0.5rem;
+        padding-top: 1rem;
+        padding-bottom: 1rem;
+        padding-left: 1rem;
+        padding-right: 1rem;
+        box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+
+        &:hover {
+        background-color: rgba(46, 102, 230, .07);
+    }
 
         @include tablet {
             border-top: none;
@@ -18,6 +31,7 @@
             flex-wrap: none;
             align-items: center;
             justify-content: space-between;
+            padding: 1rem 2rem;
             
         }
     }
@@ -71,7 +85,7 @@
         }
     }
 
-    &__catgory-render {
+    &__category-render {
         @include textStyle($primary-color-Instock-Black, 0.875rem, 1.375rem, 400);
     }
 
@@ -103,13 +117,12 @@
     }
 
     &__status-tag {
-        color: $supporting-color-Green;
-        background-color: $supporting-color-Green;
+        color: Green;
+        background-color: rgba(21, 132, 99, .07);
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        width: 7rem;
+        width: 4rem;
         height: 1.5rem;
-        opacity: 7%;
         border-radius: 1.25rem;
 
         @include tablet {
@@ -118,13 +131,31 @@
     }
 
     &__status-tag--out {
-        color: $supporting-color-Red;
-        background-color: $supporting-color-Red;
+        color: red;
+        background-color: rgba(201, 69, 21, .07);
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        width: 7rem; 
+        width: 6rem; 
         height: 1.5rem;
-        opacity: 7%;
+        border-radius: 1.25rem;
+
+        @include tablet {
+            height: 1.625rem;
+        }
+    }
+
+    &__status-tag--in {
+        color: green;
+        background-color: rgba(21, 132, 99, .07);
+    }
+
+    &__status-tag--out {
+        color: red;
+        background-color: rgba(201, 69, 21, .07);
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+        width: 6rem; 
+        height: 1.5rem;
         border-radius: 1.25rem;
 
         @include tablet {
