@@ -40,15 +40,18 @@
         &--success {
             display: flex;
             margin: 0rem 1.5rem;
+            padding: 1rem 0rem;
             @include textStyle($supporting-color-Green, 1.25rem, 1.75rem, 600);
 
             @include tablet {
                 margin: 0rem 2rem;
+                padding: 1rem 0rem;
                 @include textStyle($supporting-color-Green, 1.5rem, 2rem, 600);
             }
 
             @include desktop {
                 margin: 0rem 2.5rem;
+                padding: 1rem 0rem;
             }
         }
     }

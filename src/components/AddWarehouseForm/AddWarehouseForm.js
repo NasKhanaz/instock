@@ -172,7 +172,7 @@ function AddWarehouseForm() {
         }
       >
         The new warehouse has successfully been added! Please wait, returning
-        to warehoues page...
+        to warehouses page...
       </h2>
     </>
   );
