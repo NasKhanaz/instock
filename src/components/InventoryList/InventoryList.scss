@@ -1,0 +1,28 @@
+@use "../../styles/partials/global" as *;
+@use "../../styles/partials/variables" as *;
+@use "../../styles/partials/mixins" as *;
+
+
+.inventory {
+
+    &__category-selector--wider {
+        display: none;
+
+        @include tablet {
+            @include textStyle($secondary-color-Slate, 0.75rem, 1.125rem, 600);
+            display: contents;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            background-color: $background-color-Light-Grey;
+            height: 2rem;
+        }
+   
+    }
+    
+    &__toggle {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+    }
+}
