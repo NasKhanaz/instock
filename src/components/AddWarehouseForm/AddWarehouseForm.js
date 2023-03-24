@@ -138,7 +138,7 @@ function AddWarehouseForm() {
           }
         })
         .catch((error) => {
-          console.log(error);
+          <h2>{error}</h2>
         });
     }
   };
