@@ -52,10 +52,16 @@
         display: flex;
         align-items: center;
         position: relative;
-        bottom: 1rem;
+        bottom: 0.75rem;
+
+        @include tablet {
+            bottom: 1.25rem;
+        }
 
         &--last {
-            top: 0;
+            @include tablet {
+                bottom: 0.25rem;
+            }
         }
     }
 
