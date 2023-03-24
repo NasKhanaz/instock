@@ -17,7 +17,6 @@ function WarehouseDetails() {
       .get(`http://localhost:8080/warehouses/${warehouseId}/inventories`)
       .then((response) => {
         if (response.status === 200) {
-          console.log(response)
           setWarehouseInventory(response.data);
         }
       })
