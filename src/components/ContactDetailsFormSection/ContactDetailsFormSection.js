@@ -45,7 +45,7 @@ function ContactDetailsFormSection(props) {
       />
       <WarehouseFormField
         labelText={
-          props.validPhoneNumber === "error"
+          props.validEmail === "error"
             ? "Email: Valid email address required"
             : "Email"
         }
