@@ -42,11 +42,6 @@ function WarehouseDetailsInventory ({ warehouseArray }) {
         </div>
         <div className="inventory__toggle">
             <h2 className="inventory__selector">ACTIONS</h2>
-            {/* <img
-            className="inventory__img-selector"
-            src={sortDefaultIcon}
-            alt="sort default icon"
-            /> */}
         </div>
     </div>
     <div className="inventory__permutation">
