@@ -45,7 +45,7 @@ export default function WarehouseListItem({ warehouse }) {
                 </div>
                 <div className="wh-ls-item__icons">
                     <button className="wh-ls-item__icons-delete" onClick={() => setShow(true)} ><img src={deleteIcon} alt="delete-icon" /></button>
-                    <WarehouseModal onClose={onClose} show={show} />
+                    <WarehouseModal onClose={onClose} show={show} warehouse={warehouse} id={warehouse.id}/>
                     <button className="wh-ls-item__icons-edit">
                         <img src={editIcon} alt="edit-icon" />
                     </button>
