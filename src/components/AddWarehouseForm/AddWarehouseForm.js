@@ -134,7 +134,7 @@ function AddWarehouseForm() {
             setFormSubmissionSucessful(true);
             setTimeout(() => {
               navigate("/");
-            }, 5000);
+            }, 3000);
           }
         })
         .catch((error) => {
