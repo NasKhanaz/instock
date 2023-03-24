@@ -6,24 +6,24 @@ import FormCTAButton from "../FormCTAButton/FormCTAButton";
 import WarehouseDetailsFormSection from "../WarehouseDetailsFormSection/WarehouseDetailsFormSection";
 import "./EditWarehouseForm.scss";
 
-function EditWarehouseForm() {
+function EditWarehouseForm( {defaultStateValues} ) {
   const navigate = useNavigate();
 
   // Warehouse Details States
-  const [warehouseName, setWarehouseName] = useState("");
-  const [streetAddress, setStreetAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
+  const [warehouseName, setWarehouseName] = useState(defaultStateValues.warehouse_name);
+  const [streetAddress, setStreetAddress] = useState(defaultStateValues.address);
+  const [city, setCity] = useState(defaultStateValues.city);
+  const [country, setCountry] = useState(defaultStateValues.country);
   const [validWarehouseName, setValidWarehouseName] = useState(false);
   const [validAddress, setValidAddress] = useState(false);
   const [validCity, setValidCity] = useState(false);
   const [validCountry, setValidCountry] = useState(false);
 
   // Contact Details States
-  const [contactName, setContactName] = useState("");
-  const [position, setPosition] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
+  const [contactName, setContactName] = useState(defaultStateValues.contact_name);
+  const [position, setPosition] = useState(defaultStateValues.contact_position);
+  const [phoneNumber, setPhoneNumber] = useState(defaultStateValues.contact_phone);
+  const [email, setEmail] = useState(defaultStateValues.contact_email);
   const [validContactName, setValidContactName] = useState(false);
   const [validPosition, setValidPosition] = useState(false);
   const [validPhoneNumber, setValidPhoneNumber] = useState(false);
