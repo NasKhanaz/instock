@@ -33,7 +33,7 @@ function WarehouseDetails() {
     <header className="details-page">
       <WarehouseDetailsHeader />
     </header>
-    <WarehouseDetailsInventory  />
+    <WarehouseDetailsInventory warehouseArray={warehouseInventory} />
   </>
   );
 }
