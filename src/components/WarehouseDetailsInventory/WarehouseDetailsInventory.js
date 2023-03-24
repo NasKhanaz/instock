@@ -3,28 +3,7 @@ import sortDefaultIcon from "../../assets/Icons/sort-24px.svg";
 import WarehouseListCard from "../WarehouseListCard/WarehouseListCard";
 import { Link } from "react-router-dom";
 
-function WarehouseListCard () {
-
-  const [warehouseInventory, setWarehouseInventory] = useState(null);
-  const { warehouseId } = useParams();
-
-  useEffect(() => {
-    axios
-      .get(`http://localhost:8080/warehouses/${warehouseId}`)
-      .then((response) => {
-        if (response.status === 200) {
-          setWarehouseInventory(response.data);
-        }
-      })
-      .catch((error) => {
-        return <h2>{error.message}</h2>;
-      });
-  }, [warehouseId]); 
-  
-  if (!warehouseDetails) {
-    return <h2>Loading...</h2>
-  }
-
+function WarehouseDetailsInventory (warehouseArray) {
 
   return (
     <>
@@ -72,7 +51,7 @@ function WarehouseListCard () {
     </div>
     <div className="inventory__permutation">
         <ul className="inventory__outcome">
-        {warehouseInventory.map((item) => {
+        {warehouseArray.map((item) => {
             return <WarehouseListCard key={item.id} id={item.id} name={item.item_name} category={item.category} status={item.status} quantity={item.quantity}/>
         })}
         </ul>
@@ -81,4 +60,4 @@ function WarehouseListCard () {
   );
 };
 
-export default WarehouseListCard;
+export default WarehouseDetailsInventory;
