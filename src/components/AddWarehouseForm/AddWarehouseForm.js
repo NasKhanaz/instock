@@ -29,7 +29,7 @@ function AddWarehouseForm() {
     const [validPhoneNumber, setValidPhoneNumber] = useState(true);
     const [validEmail, setValidEmail] = useState(true);
 
-    const [validForm, setValidForm] = useState(false);
+    // const [validForm, setValidForm] = useState(false);
 
     // Determine when form submission is successful in order to toggle sucess message
     const [formSubmissionSucessful, setFormSubmissionSucessful] =
@@ -71,49 +71,46 @@ function AddWarehouseForm() {
         !email.match(emailRegexValidation)
             ? setValidEmail(false)
             : setValidEmail(true);
-
-        // Check that every field is valid
-        if (
-            validWarehouseName &&
-            validAddress &&
-            validCity &&
-            validCountry &&
-            validContactName &&
-            validPosition &&
-            validPhoneNumber &&
-            validEmail
-        ) {
-            setValidForm(true);
-        }
     };
 
     const handleSubmit = (event) => {
         event.preventDefault();
         validateForm();
-        if (validForm) {
-            axios
+        // Check that every field is valid
+        if (
+          !validWarehouseName ||
+          !validAddress ||
+          !validCity ||
+          !validCountry ||
+          !validContactName ||
+          !validPosition ||
+          !validPhoneNumber ||
+          !validEmail
+        ) { return } 
+        else {
+          setFormSubmissionSucessful(true);
+          axios
             .post("http://localhost:8080/warehouses", {
-                warehouse_name: warehouseName,
-                address: streetAddress,
-                city,
-                country,
-                contact_name: contactName,
-                contact_position: position,
-                contact_phone: phoneNumber,
-                contact_email: email,
+              warehouse_name: warehouseName,
+              address: streetAddress,
+              city,
+              country,
+              contact_name: contactName,
+              contact_position: position,
+              contact_phone: phoneNumber,
+              contact_email: email,
             })
             .then((response) => {
-                if (response.status === 201) {
-                setFormSubmissionSucessful(true);
+              if (response.status === 201) {
                 setTimeout(() => {
-                    navigate("/");
+                  navigate("/");
                 }, 5000);
-                } else {
+              } else {
                 console.log(response);
-                }
+              }
             })
             .catch((error) => {
-                console.log(error);
+              console.log(error);
             });
         }
     };
