@@ -156,8 +156,8 @@ function EditWarehouseForm( {defaultStateValues} ) {
           />
           <FormCTAButton
             type={"submit"}
-            className={"form-cta-button--primary"}
-            buttonText={"+ Add Warehouse"}
+            className={"form-cta-button--primary form-cta-button--primary--edit"}
+            buttonText={"Save"}
           />
         </div>
       </form>
