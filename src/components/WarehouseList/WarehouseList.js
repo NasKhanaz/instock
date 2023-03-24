@@ -18,6 +18,9 @@ export default function WarehouseList() {
             .then((response) => {
                 setWarehouseData(response.data);
             })
+            .catch((error) => {
+                return <h2>{error.message}</h2>;
+            })
     }, []);
 
 
