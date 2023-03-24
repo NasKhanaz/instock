@@ -2,8 +2,13 @@ import "./WarehouseListItem.scss";
 import deleteIcon from "../../../assets/Icons/delete_outline-24px.svg";
 import editIcon from "../../../assets/Icons/edit-24px.svg";
 import chevronRightIcon from "../../../assets/Icons/chevron_right-24px.svg";
+import WarehouseModal from "../../WarehouseModal/WarehouseModal";
+import { useState } from "react";
 
 export default function WarehouseListItem({ warehouse }) {
+    const [show, setShow] = useState(false);
+
+    const onClose = () => setShow(false)
 
     return (
         <div className="temp">
@@ -39,12 +44,11 @@ export default function WarehouseListItem({ warehouse }) {
                     </div>
                 </div>
                 <div className="wh-ls-item__icons">
-                    <div className="wh-ls-item__icons-delete">
-                        <img src={deleteIcon} alt="delete-icon" />
-                    </div>
-                    <div className="wh-ls-item__icons-edit">
+                    <button className="wh-ls-item__icons-delete" onClick={() => setShow(true)} ><img src={deleteIcon} alt="delete-icon" /></button>
+                    <WarehouseModal onClose={onClose} show={show} warehouse={warehouse} id={warehouse.id}/>
+                    <button className="wh-ls-item__icons-edit">
                         <img src={editIcon} alt="edit-icon" />
-                    </div>
+                    </button>
                 </div>
 
             </div>
