@@ -25,8 +25,8 @@ function InventoryItemDetails() {
 
   return (
     <>
-      <InventoryListHeader/>
-      <InventoryList inventoryArray={inventoryDetails}/>
+      <InventoryItemHeader/>
+      <InventoryItemDescription inventoryArray={inventoryItemDetails}/>
     </>
   );
 }
