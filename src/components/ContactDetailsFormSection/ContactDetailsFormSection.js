@@ -11,7 +11,7 @@ function ContactDetailsFormSection(props) {
         state={props.contactName}
         setState={props.setContactName}
         extraInputClassName={
-          props.validContactName ? "" : "form-field-input--error"
+          props.validContactName === "error" ? "form-field-input--error" : ""
         }
       />
       <WarehouseFormField
@@ -19,27 +19,31 @@ function ContactDetailsFormSection(props) {
         state={props.position}
         setState={props.setPosition}
         extraInputClassName={
-          props.validPosition ? "" : "form-field-input--error"
+          props.validPosition === "error" ? "form-field-input--error" : ""
         }
       />
       <WarehouseFormField
         labelText={
-          props.validPhoneNumber
-            ? "Phone Number"
-            : "Phone Number: Format of +1 (123) 456-7890"
+          props.validPhoneNumber === "error"
+            ? "Phone Number: Format of +1 (123) 456-7890"
+            : "Phone Number"
         }
         state={props.phoneNumber}
         setState={props.setPhoneNumber}
         extraInputClassName={
-          props.validPhoneNumber ? "" : "form-field-input--error"
+          props.validPhoneNumber === "error" ? "form-field-input--error" : ""
         }
       />
       <WarehouseFormField
-        labelText={"Email"}
+        labelText={
+          props.validPhoneNumber === "error"
+            ? "Email: Valid email address required"
+            : "Email"
+        }
         state={props.email}
         setState={props.setEmail}
         extraInputClassName={`form-field-input--last ${
-          props.validEmail ? "" : "form-field-input--error"
+          props.validEmail === "error" ? "form-field-input--error" : ""
         }`}
       />
     </section>
