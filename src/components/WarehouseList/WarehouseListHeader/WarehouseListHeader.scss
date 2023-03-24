@@ -58,7 +58,7 @@
             background-color: $primary-color-White;
 
             @include tablet {
-                // @include textStyle ($primary-color-Instock-Black, 1rem, 1rem, 400);
+                height: 2.375rem;
             }
 
             &::placeholder {
@@ -104,6 +104,10 @@
         border: none;
         cursor: pointer;
         padding: 0 1rem;
+
+        @include tablet {
+            height: 2.375rem;
+        }
 
         &:hover {
             background-color: $background-color-Graphite;
