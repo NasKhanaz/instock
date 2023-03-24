@@ -29,8 +29,6 @@ function EditWarehouseForm() {
   const [validPhoneNumber, setValidPhoneNumber] = useState(false);
   const [validEmail, setValidEmail] = useState(false);
 
-  // const [validForm, setValidForm] = useState(false);
-
   // Determine when form submission is successful in order to toggle sucess message
   const [formSubmissionSucessful, setFormSubmissionSucessful] = useState(false);
 
