@@ -1,9 +1,8 @@
-import "./WarehouseDetailsInventory.scss" 
+import "./InventoryList.scss"
+import InventoryListCard from "../../components/InventoryListCard/InventoryListCard";
 import sortDefaultIcon from "../../assets/Icons/sort-24px.svg";
-import WarehouseListCard from "../WarehouseListCard/WarehouseListCard";
-import { Link } from "react-router-dom";
 
-function WarehouseDetailsInventory ({ warehouseArray }) {
+function InventoryList ({ inventoryArray }) {
 
   return (
     <>
@@ -41,18 +40,26 @@ function WarehouseDetailsInventory ({ warehouseArray }) {
             />
         </div>
         <div className="inventory__toggle">
-            <h2 className="inventory__selector">ACTIONS</h2>
-            {/* <img
+            <h2 className="inventory__selector">WAREHOUSE</h2>
+            <img
             className="inventory__img-selector"
             src={sortDefaultIcon}
             alt="sort default icon"
-            /> */}
+            />
+        </div>
+        <div className="inventory__toggle">
+            <h2 className="inventory__selector">ACTIONS</h2>
+            <img
+            className="inventory__img-selector"
+            src={sortDefaultIcon}
+            alt="sort default icon"
+            />
         </div>
     </div>
     <div className="inventory__permutation">
         <ul className="inventory__outcome">
-        {warehouseArray.map((item) => {
-            return <WarehouseListCard key={item.id} id={item.id} name={item.item_name} category={item.category} status={item.status} quantity={item.quantity}/>
+        {inventoryArray.map((item) => {
+            return <InventoryListCard key={item.id} id={item.id} name={item.item_name} warehouse={item.warehouse_name} category={item.category} status={item.status} quantity={item.quantity}/>
         })}
         </ul>
     </div>
@@ -60,4 +67,4 @@ function WarehouseDetailsInventory ({ warehouseArray }) {
   );
 };
 
-export default WarehouseDetailsInventory;
+export default InventoryList;
