@@ -43,3 +43,27 @@
         outline: 1px solid $primary-color-Instock-Indigo;
     }
 }
+
+.form-field-error {
+    display: none;
+    border: none;
+
+    &--show {
+        display: flex;
+        align-items: center;
+        position: relative;
+        bottom: 1rem;
+
+        &--last {
+            top: 0;
+        }
+    }
+
+    &__icon {
+        margin-right: 0.25rem;
+    }
+
+    &__message {
+        @include textStyle($supporting-color-Red, 0.75rem, 1.125rem, 400);
+    }
+}

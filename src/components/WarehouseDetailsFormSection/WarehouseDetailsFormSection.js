@@ -13,6 +13,9 @@ function WarehouseDetailsFormSection(props) {
         extraInputClassName={
           props.validWarehouseName === "error" ? "form-field-input--error" : ""
         }
+        errorMessageClassName={
+          props.validWarehouseName === "error" ? "form-field-error--show" : ""
+        }
       />
       <WarehouseFormField
         labelText={"Street Address"}
@@ -20,6 +23,9 @@ function WarehouseDetailsFormSection(props) {
         setState={props.setStreetAddress}
         extraInputClassName={
           props.validAddress === "error" ? "form-field-input--error" : ""
+        }
+        errorMessageClassName={
+          props.validAddress === "error" ? "form-field-error--show" : ""
         }
       />
       <WarehouseFormField
@@ -29,14 +35,22 @@ function WarehouseDetailsFormSection(props) {
         extraInputClassName={
           props.validCity === "error" ? "form-field-input--error" : ""
         }
+        errorMessageClassName={
+          props.validCity === "error" ? "form-field-error--show" : ""
+        }
       />
       <WarehouseFormField
         labelText={"Country"}
         state={props.country}
         setState={props.setCountry}
         extraInputClassName={`form-field-input--last ${
-          props.validCity === "error" ? "form-field-input--error" : ""
+          props.validCountry === "error" ? "form-field-input--error" : ""
         }`}
+        errorMessageClassName={
+          props.validCountry === "error"
+            ? "form-field-error--show form-field-error--show--last"
+            : ""
+        }
       />
     </section>
   );

@@ -13,6 +13,9 @@ function ContactDetailsFormSection(props) {
         extraInputClassName={
           props.validContactName === "error" ? "form-field-input--error" : ""
         }
+        errorMessageClassName={
+          props.validContactName === "error" ? "form-field-error--show" : ""
+        }
       />
       <WarehouseFormField
         labelText={"Position"}
@@ -20,6 +23,9 @@ function ContactDetailsFormSection(props) {
         setState={props.setPosition}
         extraInputClassName={
           props.validPosition === "error" ? "form-field-input--error" : ""
+        }
+        errorMessageClassName={
+          props.validPosition === "error" ? "form-field-error--show" : ""
         }
       />
       <WarehouseFormField
@@ -33,6 +39,9 @@ function ContactDetailsFormSection(props) {
         extraInputClassName={
           props.validPhoneNumber === "error" ? "form-field-input--error" : ""
         }
+        errorMessageClassName={
+          props.validPhoneNumber === "error" ? "form-field-error--show" : ""
+        }
       />
       <WarehouseFormField
         labelText={
@@ -45,6 +54,11 @@ function ContactDetailsFormSection(props) {
         extraInputClassName={`form-field-input--last ${
           props.validEmail === "error" ? "form-field-input--error" : ""
         }`}
+        errorMessageClassName={
+          props.validEmail === "error"
+            ? "form-field-error--show form-field-error--show--last"
+            : ""
+        }
       />
     </section>
   );
