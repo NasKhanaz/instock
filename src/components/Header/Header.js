@@ -15,21 +15,21 @@ function Header() {
   }
 
   return (
-    <header className="header">
-      <Link to="/" className="header__logo--link">
-        <img src={InStockLogo} className="header__logo" alt="InStockLogo" />
+    <div className="mainHeader">
+      <Link to="/" className="mainHeader__logo--link">
+        <img src={InStockLogo} className="mainHeader__logo" alt="InStockLogo" />
       </Link>
-      <div className="header__container">
+      <div className="mainHeader__container">
         <Link to="/">
-          <button className="header__container__button--active">
+          <button className="mainHeader__container__button--active">
             Warehouses
           </button>
         </Link>
         <Link to="/inventory">
-          <button className="header__container__button">Inventory</button>
+          <button className="mainHeader__container__button">Inventory</button>
         </Link>
       </div>
-    </header>
+    </div>
   );
 }
 
