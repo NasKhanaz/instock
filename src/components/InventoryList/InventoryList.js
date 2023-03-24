@@ -59,7 +59,7 @@ function InventoryList ({ inventoryArray }) {
     <div className="inventory__permutation">
         <ul className="inventory__outcome">
         {inventoryArray.map((item) => {
-            return <InventoryListCard key={item.id} id={item.id} name={item.name} warehouse={item.warehouse_name} category={item.category} status={item.status} quantity={item.quantity}/>
+            return <InventoryListCard key={item.id} id={item.id} name={item.item_name} warehouse={item.warehouse_name} category={item.category} status={item.status} quantity={item.quantity}/>
         })}
         </ul>
     </div>
