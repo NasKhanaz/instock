@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.new-warehouse-form {
+.edit-warehouse-form {
     &__input-sections {
         @include tablet {
             display: flex;
