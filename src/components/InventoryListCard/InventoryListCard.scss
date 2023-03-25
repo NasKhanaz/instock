@@ -22,8 +22,8 @@
         box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
 
         &:hover {
-        background-color: rgba(46, 102, 230, .07);
-    }
+            background-color: rgba(46, 102, 230, .07);
+        }
 
         @include tablet {
             border-top: none;
@@ -32,7 +32,7 @@
             align-items: center;
             justify-content: space-between;
             padding: 1rem 2rem;
-            
+
         }
     }
 
@@ -69,7 +69,7 @@
 
     &__item-link {
         display: flex;
-        
+
     }
 
     &__text-link {
@@ -104,7 +104,7 @@
         }
     }
 
-     &__middle-box {
+    &__middle-box {
         display: flex;
         flex-direction: column;
         width: 50%;
@@ -116,12 +116,12 @@
             align-items: center;
             width: 40%;
             justify-content: space-between;
-        
+
         }
     }
 
     &__status {
-         @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
+        @include textStyle($secondary-color-Slate, 0.6875rem, 1rem, 600);
         margin-bottom: 0.25rem;
 
         @include tablet {
@@ -148,7 +148,7 @@
         background-color: rgba(201, 69, 21, .07);
         padding-left: 0.5rem;
         padding-right: 0.5rem;
-        width: 6rem; 
+        width: 6rem;
         height: 1.5rem;
         border-radius: 1.25rem;
 
@@ -195,13 +195,20 @@
             width: auto;
             width: 5rem;
             padding-top: 0;
-    
-            
         }
     }
 
+    &__button-delete {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
 
-} 
+    &__button-edit {
+        background-color: transparent;
+        border: none;
+        cursor: pointer;
+    }
 
 
-
+}
