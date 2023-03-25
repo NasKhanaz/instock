@@ -1,37 +1,37 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
-import ContactDetailsFormSection from "../ContactDetailsFormSection/ContactDetailsFormSection"
+import ContactDetailsFormSection from "../ContactDetailsFormSection/ContactDetailsFormSection";
 import FormCTAButton from "../FormCTAButton/FormCTAButton";
 import WarehouseDetailsFormSection from "../WarehouseDetailsFormSection/WarehouseDetailsFormSection";
-import "./AddWarehouseForm.scss";
+import "./EditWarehouseForm.scss";
 
-function AddWarehouseForm() {
+function EditWarehouseForm( {defaultStateValues} ) {
   const navigate = useNavigate();
+  const { warehouseId } = useParams();
 
   // Warehouse Details States
-  const [warehouseName, setWarehouseName] = useState("");
-  const [streetAddress, setStreetAddress] = useState("");
-  const [city, setCity] = useState("");
-  const [country, setCountry] = useState("");
+  const [warehouseName, setWarehouseName] = useState(defaultStateValues.warehouse_name);
+  const [streetAddress, setStreetAddress] = useState(defaultStateValues.address);
+  const [city, setCity] = useState(defaultStateValues.city);
+  const [country, setCountry] = useState(defaultStateValues.country);
   const [validWarehouseName, setValidWarehouseName] = useState(false);
   const [validAddress, setValidAddress] = useState(false);
   const [validCity, setValidCity] = useState(false);
   const [validCountry, setValidCountry] = useState(false);
 
   // Contact Details States
-  const [contactName, setContactName] = useState("");
-  const [position, setPosition] = useState("");
-  const [phoneNumber, setPhoneNumber] = useState("");
-  const [email, setEmail] = useState("");
+  const [contactName, setContactName] = useState(defaultStateValues.contact_name);
+  const [position, setPosition] = useState(defaultStateValues.contact_position);
+  const [phoneNumber, setPhoneNumber] = useState(defaultStateValues.contact_phone);
+  const [email, setEmail] = useState(defaultStateValues.contact_email);
   const [validContactName, setValidContactName] = useState(false);
   const [validPosition, setValidPosition] = useState(false);
   const [validPhoneNumber, setValidPhoneNumber] = useState(false);
   const [validEmail, setValidEmail] = useState(false);
 
   // Determine when form submission is successful in order to toggle sucess message
-  const [formSubmissionSucessful, setFormSubmissionSucessful] =
-  useState(false);
+  const [formSubmissionSucessful, setFormSubmissionSucessful] = useState(false);
 
   function handleClick() {
     navigate(-1); // Navigates the user to the previous page
@@ -43,7 +43,7 @@ function AddWarehouseForm() {
 
     // Check warehouse details form fields
     if (!warehouseName) {
-      setValidWarehouseName("error")
+      setValidWarehouseName("error");
       isFormValid = false;
     } else {
       setValidWarehouseName(true);
@@ -90,7 +90,7 @@ function AddWarehouseForm() {
     // Must then be 3 digits followed by a hyphen
     // Must end with 4 digits
     const phoneRegexValidation = /^(\+\d+)\s\(\d{3}\)\s\d{3}-\d{4}$/;
-    
+
     if (!phoneNumber.match(phoneRegexValidation)) {
       setValidPhoneNumber("error");
       isFormValid = false;
@@ -103,7 +103,7 @@ function AddWarehouseForm() {
     // Must then 1 or more alphanumeric characters before (not allowing for a dot or hyphen) before a .
     // Must be followed by a domain which only has letters and is between 2-10 characters long
     const emailRegexValidation =
-        /^([a-zA-Z\d.-]+)@([a-zA-Z\d]+)\.([a-zA-z]{2,10})$/;
+      /^([a-zA-Z\d.-]+)@([a-zA-Z\d]+)\.([a-zA-z]{2,10})$/;
     if (!email.match(emailRegexValidation)) {
       setValidEmail("error");
       isFormValid = false;
@@ -119,7 +119,7 @@ function AddWarehouseForm() {
     event.preventDefault();
     if (validateForm()) {
       axios
-        .post("http://localhost:8080/warehouses", {
+        .put(`http://localhost:8080/warehouses/${warehouseId}`, {
           warehouse_name: warehouseName,
           address: streetAddress,
           city,
@@ -130,7 +130,7 @@ function AddWarehouseForm() {
           contact_email: email,
         })
         .then((response) => {
-          if (response.status === 201) {
+          if (response.status === 200) {
             setFormSubmissionSucessful(true);
             setTimeout(() => {
               navigate("/");
@@ -145,8 +145,8 @@ function AddWarehouseForm() {
 
   return (
     <>
-      <form className="new-warehouse-form" onSubmit={handleSubmit}>
-        <div className="new-warehouse-form__input-sections">
+      <form className="edit-warehouse-form" onSubmit={handleSubmit}>
+        <div className="edit-warehouse-form__input-sections">
           <WarehouseDetailsFormSection
             warehouseName={warehouseName}
             setWarehouseName={setWarehouseName}
@@ -176,7 +176,7 @@ function AddWarehouseForm() {
             validEmail={validEmail}
           />
         </div>
-        <div className="new-warehouse-form__buttons-container">
+        <div className="edit-warehouse-form__buttons-container">
           <FormCTAButton
             type={"button"}
             className={"form-cta-button--secondary"}
@@ -185,23 +185,23 @@ function AddWarehouseForm() {
           />
           <FormCTAButton
             type={"submit"}
-            className={"form-cta-button--primary"}
-            buttonText={"+ Add Warehouse"}
+            className={"form-cta-button--primary form-cta-button--primary--edit"}
+            buttonText={"Save"}
           />
         </div>
       </form>
       <h2
         className={
           formSubmissionSucessful
-            ? "new-warehouse-form__message--success"
-            : "new-warehouse-form__message"
+            ? "edit-warehouse-form__message--success"
+            : "edit-warehouse-form__message"
         }
       >
-        The new warehouse has successfully been added! Please wait, returning
-        to warehouses page...
+        The warehouse has successfully been edited! Please wait, returning to
+        warehouses page...
       </h2>
     </>
   );
 }
 
-export default AddWarehouseForm;
+export default EditWarehouseForm;

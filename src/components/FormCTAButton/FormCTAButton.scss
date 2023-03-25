@@ -26,6 +26,17 @@
         &:hover {
             background-color: $primary-color-Instock-Black;
         }
+
+        &--edit {
+            @include tablet {
+                width: 8%;
+                width: 61px;
+            }
+
+            @include desktop {
+                width: 6.5%;
+            }
+        }
     }
 
     &--secondary {
