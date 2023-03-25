@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useParams } from "react-router-dom";
 import axios from "axios";
 import ContactDetailsFormSection from "../ContactDetailsFormSection/ContactDetailsFormSection";
 import FormCTAButton from "../FormCTAButton/FormCTAButton";
@@ -8,6 +8,7 @@ import "./EditWarehouseForm.scss";
 
 function EditWarehouseForm( {defaultStateValues} ) {
   const navigate = useNavigate();
+  const { warehouseId } = useParams();
 
   // Warehouse Details States
   const [warehouseName, setWarehouseName] = useState(defaultStateValues.warehouse_name);
@@ -118,7 +119,7 @@ function EditWarehouseForm( {defaultStateValues} ) {
     event.preventDefault();
     if (validateForm()) {
       axios
-        .post("http://localhost:8080/warehouses", {
+        .put(`http://localhost:8080/warehouses/${warehouseId}`, {
           warehouse_name: warehouseName,
           address: streetAddress,
           city,
