@@ -1,0 +1,36 @@
+@use "../../../../styles/partials/global" as *;
+@use "../../../../styles/partials/variables" as *;
+@use "../../../../styles/partials/mixins" as *;
+@use "../../../../styles/partials/fonts" as *;
+
+.HBContainer {
+    display: flex;
+    text-decoration: none;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+
+    @include tablet {
+        justify-content: flex-end;
+    }
+
+    &__button {
+        background-color: $background-color-Graphite;
+        color: white;
+        border-radius: 1.25rem;
+        border:none;
+
+        @include tablet {
+            width: 60%;
+        }
+
+        &--active {
+            background-color: $primary-color-Instock-Black;
+            height: 2.25rem;
+            border-radius: 1.25rem;
+            color: white;
+            border: none;
+        }
+    }
+
+}
