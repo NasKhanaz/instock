@@ -6,22 +6,17 @@ export default function HeaderContainer() {
   const {pathname} = useLocation();
   const [isWarehouse, setIsWarehouse] = useState(false);
   const [isInventory, setIsInventory] = useState(false);
+  console.log(pathname);
 
   useEffect(() => {
     if (
       pathname === "/" ||
-      pathname === "/warehouses" ||
-      pathname === "/warehouses/add" ||
-      pathname === "/warehouses/:warehouseId" ||
-      pathname === "/warehouses/:warehouseId/edit"
+      pathname.includes("/warehouses")
     ) {
       setIsWarehouse(true);
       setIsInventory(false);
     } else if (
-      pathname === "/inventory" ||
-      pathname === "/inventory/add" ||
-      pathname === "/inventory/:inventoryId" ||
-      pathname === "/inventory/:inventoryId/edit"
+      pathname.includes("/inventory")
     ) {
       setIsWarehouse(false);
       setIsInventory(true);
