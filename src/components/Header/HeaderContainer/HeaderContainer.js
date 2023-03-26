@@ -2,7 +2,8 @@ import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HeaderButtons from "./HeaderButtons/HeaderButtons";
 export default function HeaderContainer() {
-  const location = useLocation();
+  const path = useLocation();
+  const location = path.pathname;
   const [isWarehouse, setIsWarehouse] = useState(true);
   const [isInventory, setIsInventory] = useState(false);
   console.log(location);

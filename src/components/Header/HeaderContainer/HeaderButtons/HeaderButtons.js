@@ -3,6 +3,8 @@ import { Link } from "react-router-dom";
 import "./HeaderButtons.scss";
 
 export default function HeaderButtons({ isWarehouse, isInventory }) {
+  console.log("inventory " + isInventory);
+  console.log("warehouse " + isWarehouse);
   if (isWarehouse) {
     return (
       <div className="HBContainer">
