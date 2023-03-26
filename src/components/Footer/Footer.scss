@@ -1,3 +1,18 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
+
+.mainFooter{
+    width: 100%;
+    height: 6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0rem;
+    &__text{
+        font-size: 0.688rem;
+        font-weight: 400;
+        color: $secondary-color-Slate;
+    }
+}
