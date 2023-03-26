@@ -6,16 +6,23 @@ export default function HeaderButtons({ isWarehouse, isInventory }) {
 
   return (
     <div className="header-buttons-container">
-      <Link to="/warehouses">
+      <Link
+        to="/warehouses"
+        className="header-button-container header-button-container--left"
+      >
         <button
-          className={`header-buttons-container__button ${isWarehouse ? "header-buttons-container__button--active" : ""}`}
+          className={`header-button-container__button ${
+            isWarehouse ? "header-button-container__button--active" : ""
+          }`}
         >
           Warehouses
         </button>
       </Link>
-      <Link to="/inventory">
+      <Link to="/inventory" className="header-button-container">
         <button
-          className={`header-buttons-container__button ${isInventory ? "header-buttons-container__button--active" : ""}`}
+          className={`header-button-container__button ${
+            isInventory ? "header-button-container__button--active" : ""
+          }`}
         >
           Inventory
         </button>
