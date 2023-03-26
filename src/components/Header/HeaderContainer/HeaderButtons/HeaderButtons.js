@@ -32,7 +32,7 @@ export default function HeaderButtons({ isWarehouse, isInventory }) {
           <button className="HBContainer__button">Warehouses</button>
         </Link>
         <Link to="/inventory">
-          <button className="HBContainer__button--active">Inventory</button>
+          <button className="HBContainer__button">Inventory</button>
         </Link>
       </div>
     );

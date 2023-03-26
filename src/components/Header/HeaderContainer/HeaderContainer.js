@@ -4,7 +4,7 @@ import HeaderButtons from "./HeaderButtons/HeaderButtons";
 export default function HeaderContainer() {
   const path = useLocation();
   const location = path.pathname;
-  const [isWarehouse, setIsWarehouse] = useState(true);
+  const [isWarehouse, setIsWarehouse] = useState(false);
   const [isInventory, setIsInventory] = useState(false);
 
   useEffect(() => {

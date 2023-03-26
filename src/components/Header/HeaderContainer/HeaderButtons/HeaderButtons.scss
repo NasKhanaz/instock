@@ -33,9 +33,7 @@
         padding-right: 1rem;
         
         text-align: center;
-        @include tablet {
-            width: 60%;
-        }
+        
 
         &--active {
             background-color: $primary-color-Instock-Black;
