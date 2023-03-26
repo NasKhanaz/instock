@@ -31,10 +31,10 @@ function WarehouseDetails() {
 
   return (
   <>
-    <header className="details-page">
+    <main className="details-page">
       <WarehouseDetailsHeader />
-    </header>
-    <WarehouseDetailsInventory warehouseArray={warehouseInventory} />
+        <WarehouseDetailsInventory warehouseArray={warehouseInventory} />
+    </main>
   </>
   );
 }
