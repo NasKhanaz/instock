@@ -6,7 +6,6 @@ export default function HeaderContainer() {
   const {pathname} = useLocation();
   const [isWarehouse, setIsWarehouse] = useState(false);
   const [isInventory, setIsInventory] = useState(false);
-  console.log(pathname);
 
   useEffect(() => {
     if (
