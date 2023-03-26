@@ -1,31 +1,27 @@
 @use "../../styles/partials/global" as *;
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
-@use "../../styles/partials/fonts" as *;
 
-.body{
-    margin:0rem;
-}
-
-.mainHeader{
+.main-header{
     display: flex;
-    background-color: $background-color-Graphite;
     flex-direction: column; 
     align-items: center;
-    margin: 0;
+    background-color: $background-color-Graphite;
     z-index: -1;
     height: 12.5rem;
     
     @include tablet {
         flex-direction: row;
+        align-items: normal;
         justify-content: space-between;
     }
 
     &__logo {
-        margin: 1.5rem;
+        margin: 1.5rem 0rem;
     
         @include tablet {
-            margin-left: 2rem;
+            margin: 2rem;
+            margin-right: 0rem;
         }
     
         @include desktop {

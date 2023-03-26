@@ -18,28 +18,17 @@ function App() {
       <Header />
       <Routes>
         <Route path="/" element={<Warehouses />} />
+        <Route path="/warehouses" element={<Warehouses />} />
         <Route path="/warehouses/add" element={<AddWarehouse />} />
-        <Route
-          path="/warehouses/:warehouseId"
-          element={<WarehouseDetails />}
-        />
+        <Route path="/warehouses/:warehouseId" element={<WarehouseDetails />} />
         <Route
           path="/warehouses/:warehouseId/edit"
           element={<EditWarehouse />}
         />
         <Route path="/inventory" element={<Inventory />} />
-        <Route
-          path="/inventory/add"
-          element={<AddInventoryItem />}
-        />
-        <Route
-          path="/inventory/:itemId"
-          element={<InventoryItemDetails />}
-        />
-        <Route
-          path="/inventory/:itemId/edit"
-          element={<EditInventoryItem />}
-        />
+        <Route path="/inventory/add" element={<AddInventoryItem />} />
+        <Route path="/inventory/:itemId" element={<InventoryItemDetails />} />
+        <Route path="/inventory/:itemId/edit" element={<EditInventoryItem />} />
         <Route path="*" element={<NotFound />} />
       </Routes>
       <Footer />

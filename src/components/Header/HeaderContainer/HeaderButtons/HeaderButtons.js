@@ -3,37 +3,33 @@ import { Link } from "react-router-dom";
 import "./HeaderButtons.scss";
 
 export default function HeaderButtons({ isWarehouse, isInventory }) {
-  if (isWarehouse) {
-    return (
-      <div className="HBContainer">
-        <Link to="/">
-          <button className="HBContainer__button--active">Warehouses</button>
-        </Link>
-        <Link to="/inventory">
-          <button className="HBContainer__button">Inventory</button>
-        </Link>
-      </div>
-    );
-  } else if (isInventory) {
-    return (
-      <div className="HBContainer">
-        <Link to="/">
-          <button className="HBContainer__button">Warehouses</button>
-        </Link>
-        <Link to="/inventory">
-          <button className="HBContainer__button--active">Inventory</button>
-        </Link>
-      </div>
-    );
-  } else
-    return (
-      <div className="HBContainercontainer">
-        <Link to="/">
-          <button className="HBContainer__button">Warehouses</button>
-        </Link>
-        <Link to="/inventory">
-          <button className="HBContainer__button">Inventory</button>
-        </Link>
-      </div>
-    );
+
+  return (
+    <div className="header-buttons-container">
+      <Link
+        to="/warehouses"
+        className="header-button-container header-button-container--left"
+      >
+        <button
+          className={`header-button-container__button header-button-container__button--left ${
+            isWarehouse ? "header-button-container__button--active" : ""
+          }`}
+        >
+          Warehouses
+        </button>
+      </Link>
+      <Link 
+        to="/inventory"
+        className="header-button-container"
+      >
+        <button
+          className={`header-button-container__button header-button-container__button--right ${
+            isInventory ? "header-button-container__button--active" : ""
+          }`}
+        >
+          Inventory
+        </button>
+      </Link>
+    </div>
+  );
 }

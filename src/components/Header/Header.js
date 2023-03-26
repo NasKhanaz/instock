@@ -5,9 +5,9 @@ import HeaderContainer from "./HeaderContainer/HeaderContainer";
 
 function Header() {
   return (
-    <div className="mainHeader">
-      <Link to="/" className="mainHeader__logo--link">
-        <img src={InStockLogo} className="mainHeader__logo" alt="InStockLogo" />
+    <div className="main-header">
+      <Link to="/" className="main-header__logo--link">
+        <img src={InStockLogo} className="main-header__logo" alt="InStock logo" />
       </Link>
       <HeaderContainer />
     </div>

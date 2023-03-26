@@ -1,32 +1,29 @@
 import { useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 import HeaderButtons from "./HeaderButtons/HeaderButtons";
+
 export default function HeaderContainer() {
-  const path = useLocation();
-  const location = path.pathname;
+  const {pathname} = useLocation();
   const [isWarehouse, setIsWarehouse] = useState(false);
   const [isInventory, setIsInventory] = useState(false);
 
   useEffect(() => {
     if (
-      location === "/" ||
-      location === "/warehouses/add" ||
-      location === "/warehouses/:warehouseId" ||
-      location === "/warehouses/:warehouseId/edit"
+      pathname === "/" ||
+      pathname.includes("/warehouses")
     ) {
       setIsWarehouse(true);
       setIsInventory(false);
-    }
-    if (
-      location === "/inventory" ||
-      location === "/inventory/add" ||
-      location === "/inventory/:inventoryId" ||
-      location === "/inventory/:inventoryId/edit"
+    } else if (
+      pathname.includes("/inventory")
     ) {
       setIsWarehouse(false);
       setIsInventory(true);
+    } else { // Manage scenario where user manully navigates to a non-existent path
+      setIsWarehouse(false);
+      setIsInventory(false);
     }
-  }, [location]);
+  }, [pathname]); // Run these checks only when the path changes
 
   return <HeaderButtons isWarehouse={isWarehouse} isInventory={isInventory} />;
 }
