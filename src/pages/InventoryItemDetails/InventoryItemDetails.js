@@ -1,7 +1,13 @@
 import "./InventoryItemDetails.scss";
+import InventoryItemDescription from "../../components/InventoryItemDescription/InventoryItemDescription";
 
 function InventoryItemDetails() {
-  return <h1>This is the Inventory Item Details page.</h1>;
+
+  return (
+    <>
+      <InventoryItemDescription />
+    </>
+  );
 }
 
 export default InventoryItemDetails;
