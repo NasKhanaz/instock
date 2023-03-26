@@ -28,35 +28,43 @@ function WarehouseDetailsHeader() {
 
   return (
     <>
-      <header className="header">
-        <div className="header__left-container">
+      <header className="warehouse-details-header">
+        <div className="warehouse-details-header__left-container">
           <img
-            className="header__back-arrow"
+            className="warehouse-details-header__back-arrow"
             src={backArrow}
             alt="back arrow"
           />
-          <h1 className="header__warehouse-name">
+          <h1 className="warehouse-details-header__warehouse-name">
             {warehouseDetails.warehouse_name}
           </h1>
         </div>
-        <button className="header__edit-button--mobile"></button>
-        <button className="header__edit-button">Edit</button>
+        <button className="warehouse-details-header__edit-button--mobile"></button>
+        <button className="warehouse-details-header__edit-button">Edit</button>
       </header>
-      <main className="details">
-        <div className="details__address-container">
-          <h2 className="details__heading">WAREHOUSE ADDRESS:</h2>
-          <p className="details__info details__address">{`${warehouseDetails.address}, ${warehouseDetails.city}, ${warehouseDetails.country}`}</p>
+      <main className="warehouse-details">
+        <div className="warehouse-details__address-container">
+          <h2 className="dwarehouse-etails__heading">WAREHOUSE ADDRESS:</h2>
+          <p className="warehouse-details__info warehouse-details__address">{`${warehouseDetails.address}, ${warehouseDetails.city}, ${warehouseDetails.country}`}</p>
         </div>
-        <div className="details__contact-container">
-          <div className="details__contact-name-container">
-            <h2 className="details__heading">CONTACT NAME:</h2>
-            <p className="details__info">{warehouseDetails.contact_name}</p>
-            <p className="details__info">{warehouseDetails.contact_position}</p>
+        <div className="warehouse-details__contact-container">
+          <div className="warehouse-details__contact-name-container">
+            <h2 className="warehouse-details__heading">CONTACT NAME:</h2>
+            <p className="warehouse-details__info">
+              {warehouseDetails.contact_name}
+            </p>
+            <p className="warehouse-details__info">
+              {warehouseDetails.contact_position}
+            </p>
           </div>
-          <div className="details__contact-info-container">
-            <h2 className="details__heading">CONTACT INFORMATION:</h2>
-            <p className="details__info">{warehouseDetails.contact_phone}</p>
-            <p className="details__info">{warehouseDetails.contact_email}</p>
+          <div className="warehouse-details__contact-info-container">
+            <h2 className="warehouse-details__heading">CONTACT INFORMATION:</h2>
+            <p className="warehouse-details__info">
+              {warehouseDetails.contact_phone}
+            </p>
+            <p className="warehouse-details__info">
+              {warehouseDetails.contact_email}
+            </p>
           </div>
         </div>
       </main>

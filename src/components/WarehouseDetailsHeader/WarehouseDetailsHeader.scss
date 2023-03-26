@@ -2,7 +2,7 @@
 @use "../../styles/partials/variables" as *;
 @use "../../styles/partials/mixins" as *;
 
-.header {
+.warehouse-details-header {
     display: flex;
     justify-content: space-between;
     padding-bottom: 1.5rem;
@@ -65,7 +65,7 @@
     }
 }
 
-.details {
+.warehouse-details {
     border-top: 1px solid $secondary-color-Cloud;
     padding: 1rem 1.5rem;
 
