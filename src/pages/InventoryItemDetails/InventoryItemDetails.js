@@ -5,7 +5,6 @@ function InventoryItemDetails() {
 
   return (
     <>
-      <InventoryItemHeader/>
       <InventoryItemDescription/>
     </>
   );

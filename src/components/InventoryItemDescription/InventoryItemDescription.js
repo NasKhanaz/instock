@@ -1,8 +1,9 @@
 import { Link } from "react-router-dom";
-import "./InventoryItemDescription.scss";
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
 import axios from "axios";
+import backArrow from "../../assets/Icons/arrow_back-24px.svg";
+import "./InventoryItemDescription.scss";
 
 function InventoryItemDescription () {
   
@@ -28,7 +29,21 @@ function InventoryItemDescription () {
   }
 
   return (
-
+    <>
+    <header className="header">
+        <div className="header__left-container">
+          <img
+            className="header__back-arrow"
+            src={backArrow}
+            alt="back arrow"
+          />
+          <h1 className="header__item-name">
+            {warehouseDetails.item_name}
+          </h1>
+        </div>
+        <button className="header__edit-button--mobile"></button>
+        <button className="header__edit-button">Edit</button>
+      </header>
     <main> 
         <div className="inventory__listcard">
             <div className="inventory__left-box">
@@ -59,6 +74,7 @@ function InventoryItemDescription () {
             </div>
         </div>
     </main>
+    </>
   );
 }
 
