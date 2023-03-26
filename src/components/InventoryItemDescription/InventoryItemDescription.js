@@ -46,29 +46,29 @@ function InventoryItemDescription() {
         <button className="header__button">Edit</button>
       </header>
     <main> 
-        <div className="inventory__listcard">
-            <div className="inventory__left-box">
-                <div className="inventory__item-container">
-                    <h2 className="inventory__item">ITEM DESCRIPTION</h2>
-                    <p className="inventory__text-link">{inventoryItemDetails.description}</p>
+        <div className="inventory__list">
+            <div className="inventory__top-box">
+                <div className="inventory__description-container">
+                    <h2 className="inventory__item-description">ITEM DESCRIPTION:</h2>
+                    <p className="inventory__text-description">{inventoryItemDetails.description}</p>
                 </div>
-                <div className="inventory__category-container">
-                    <h2 className="inventory__category">CATEGORY</h2>
-                    <p className="inventory__category-render">{inventoryItemDetails.category}</p>
+                <div className="inventory__cat-container">
+                    <h2 className="inventory__cat">CATEGORY:</h2>
+                    <p className="inventory__cat-render">{inventoryItemDetails.category}</p>
                 </div>
             </div>
-            <div className="inventory__middle-box">
-                <div className="inventory__status-container">
-                    <h2 className="inventory__status">STATUS</h2>
+            <div className="inventory__bottom-box">
+                <div className="inventory__stat-container">
+                    <h2 className="inventory__stat">STATUS:</h2>
                     <div className={inventoryItemDetails.status === "In Stock" ? "inventory__status-tag--in" : "inventory__status-tag--out"}>{inventoryItemDetails.status}</div>
                 </div>
-                 <div className="inventory__qty-container">
-                    <h2 className="inventory__qty">QUANTITY</h2>
-                    <p className="inventory__qty-count">{inventoryItemDetails.quantity}</p>
+                 <div className="inventory__quantity-container">
+                    <h2 className="inventory__quantity">QUANTITY:</h2>
+                    <p className="inventory__quantity-count">{inventoryItemDetails.quantity}</p>
                 </div>
-                <div className="inventory__warehouse-container">
-                    <h2 className="inventory__warehouse">WAREHOUSE</h2>
-                    <p className="inventory__warehouse-render">{inventoryItemDetails.warehouse_name}</p>
+                <div className="inventory__ware-container">
+                    <h2 className="inventory__ware">WAREHOUSE:</h2>
+                    <p className="inventory__ware-render">{inventoryItemDetails.warehouse_name}</p>
                 </div>
             </div>
         </div>
