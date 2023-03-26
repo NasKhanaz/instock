@@ -196,8 +196,6 @@
         @include tablet {
             display: flex;
             flex-direction: row;
-            width: auto;
-            width: 5rem;
             padding-top: 0;
 
 
@@ -208,6 +206,10 @@
         border: none;
         background-color: transparent;
         cursor: pointer;
+    }
+
+    &__edit {
+        margin-left: 1.5rem;
     }
 
 
