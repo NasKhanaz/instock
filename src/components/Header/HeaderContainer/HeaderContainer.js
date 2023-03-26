@@ -6,7 +6,6 @@ export default function HeaderContainer() {
   const location = path.pathname;
   const [isWarehouse, setIsWarehouse] = useState(true);
   const [isInventory, setIsInventory] = useState(false);
-  console.log(location);
 
   useEffect(() => {
     if (
@@ -17,8 +16,6 @@ export default function HeaderContainer() {
     ) {
       setIsWarehouse(true);
       setIsInventory(false);
-      console.log("is warehouse = " + isWarehouse);
-      console.log("is inventory = " + isInventory);
     }
     if (
       location === "/inventory" ||
@@ -28,8 +25,6 @@ export default function HeaderContainer() {
     ) {
       setIsWarehouse(false);
       setIsInventory(true);
-      console.log("is warehouse = " + isWarehouse);
-      console.log("is inventory = " + isInventory);
     }
   }, [location]);
 
