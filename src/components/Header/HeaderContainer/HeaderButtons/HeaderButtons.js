@@ -18,7 +18,10 @@ export default function HeaderButtons({ isWarehouse, isInventory }) {
           Warehouses
         </button>
       </Link>
-      <Link to="/inventory" className="header-button-container">
+      <Link 
+        to="/inventory"
+        className="header-button-container"
+      >
         <button
           className={`header-button-container__button header-button-container__button--right ${
             isInventory ? "header-button-container__button--active" : ""
