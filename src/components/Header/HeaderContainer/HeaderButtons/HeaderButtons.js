@@ -11,7 +11,7 @@ export default function HeaderButtons({ isWarehouse, isInventory }) {
         className="header-button-container header-button-container--left"
       >
         <button
-          className={`header-button-container__button ${
+          className={`header-button-container__button header-button-container__button--left ${
             isWarehouse ? "header-button-container__button--active" : ""
           }`}
         >
@@ -20,7 +20,7 @@ export default function HeaderButtons({ isWarehouse, isInventory }) {
       </Link>
       <Link to="/inventory" className="header-button-container">
         <button
-          className={`header-button-container__button ${
+          className={`header-button-container__button header-button-container__button--right ${
             isInventory ? "header-button-container__button--active" : ""
           }`}
         >
