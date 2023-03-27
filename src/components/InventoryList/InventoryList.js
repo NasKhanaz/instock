@@ -7,7 +7,7 @@ function InventoryList({ inventoryArray }) {
     return (
         <>
             <div className="inventory__category-selector--wider">
-                <div clasName="inventory__left-box">
+                <div className="inventory__left-box">
                     <div className="inventory__toggle">
                         <h2 className="inventory__selector">INVENTORY ITEM</h2>
                         <button className="inventory__nav-button">

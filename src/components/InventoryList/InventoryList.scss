@@ -90,5 +90,11 @@
         &:active {
             border: 1px solid grey;
         }
+        background-color: transparent;
     }
+
+    &__img-selector {
+        height: 0.75rem;   
+    }
+
 }
