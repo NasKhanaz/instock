@@ -10,6 +10,7 @@ function ItemFormRadio({
 }) {
   const handleChange = (event) => {
     setState(event.target.value);
+    console.log(event.target.value);
   };
 
   return (
@@ -17,31 +18,31 @@ function ItemFormRadio({
       <label className="form-field-label" htmlFor={labelText}>
         {labelText}
       </label>
-      <div>
-        <label className="form-field-radio-container">
+      <div className="form-field-radios">
+        <div className="form-field-radio-container">
           <input
             className={`form-field-radio ${extraInputClassName}`}
             type="radio"
             id={labelText}
             name={labelText}
             onChange={handleChange}
-            value={state}
+            value="In Stock"
           />
-          <h5>In Stock</h5>
-        </label>
-        <label className="form-field-radio-container">
-          <input
-            className={`form-field-radio ${extraInputClassName}`}
-            type="radio"
-            id={labelText}
-            name={labelText}
-            onChange={handleChange}
-            value={state}
-          />
-          <h5>Out of Stock</h5>
-        </label>
-      </div>
+          <h5 className="form-field-radio-container--text">In Stock</h5>
+        </div>
 
+        <div className="form-field-radio-container">
+          <input
+            className={`form-field-radio ${extraInputClassName}`}
+            type="radio"
+            id={labelText}
+            name={labelText}
+            onChange={handleChange}
+            value="Out of Stock"
+          />
+          <h5 className="form-field-radio-container--text">Out of Stock</h5>
+        </div>
+      </div>
       <div className={`form-field-error ${errorMessageClassName}`}>
         <img
           className="form-field-error__icon"

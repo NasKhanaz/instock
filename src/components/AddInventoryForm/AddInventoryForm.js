@@ -35,7 +35,7 @@ function AddInventoryForm() {
       }
     });
   }, []);
-  console.log(warehouseList);
+
   // Determine when form submission is successful in order to toggle success message
   const [formSubmissionSucessful, setFormSubmissionSucessful] = useState(false);
 
@@ -101,14 +101,12 @@ function AddInventoryForm() {
     event.preventDefault();
     //To get warehouse id using warehouse name
 
-    const myWarehouse = warehouseList.find(
-      (element) => element.warehouse_name === warehouseName
-    );
-    const warehouse_id = myWarehouse.id;
-    console.log(myWarehouse);
-    console.log(warehouse_id);
-
     if (validateForm()) {
+      const myWarehouse = warehouseList.find(
+        (element) => element.warehouse_name === warehouseName
+      );
+      const warehouse_id = myWarehouse.id;
+
       axios
         .post("http://localhost:8080/inventory", {
           item_name: itemName,

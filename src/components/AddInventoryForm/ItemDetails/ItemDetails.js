@@ -1,5 +1,6 @@
 import ItemFormText from "../ItemFormText/ItemFormText";
 import ItemFormTextArea from "../ItemFormTextArea/ItemFormTextArea";
+import ItemDropDown from "../ItemDropDown/ItemDropDown";
 import "./ItemDetails.scss";
 
 function ItemDetails(props) {
@@ -19,13 +20,24 @@ function ItemDetails(props) {
       />
       <ItemFormTextArea
         labelText={"Description"}
-        state={props.Description}
+        state={props.description}
         setState={props.setDescription}
         extraInputClassName={
           props.validDescription === "error" ? "form-field-input--error" : ""
         }
         errorMessageClassName={
           props.validDescription === "error" ? "form-field-error--show" : ""
+        }
+      />
+      <ItemDropDown
+        labelText={"Category"}
+        state={props.category}
+        setState={props.setCategory}
+        extraInputClassName={
+          props.validCategory === "error" ? "form-field-input--error" : ""
+        }
+        errorMessageClassName={
+          props.validCategory === "error" ? "form-field-error--show" : ""
         }
       />
     </section>
