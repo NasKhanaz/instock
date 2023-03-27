@@ -11,7 +11,6 @@ export default function WarehouseModal({ id, warehouse, show, onClose }) {
     const deleteWarehouse = () => {
         axios.delete(`http://localhost:8080/warehouses/${id}`)
             .then((response) => {
-                alert(`Warehouse ${warehouse.warehouse_name} has been deleted`);
                 window.location.reload();
             })
             .catch(error => console.log(error));
