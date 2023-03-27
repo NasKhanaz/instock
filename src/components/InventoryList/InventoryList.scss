@@ -12,17 +12,36 @@
             @include textStyle($secondary-color-Slate, 0.75rem, 1.125rem, 600);
             display: contents;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             background-color: $background-color-Light-Grey;
             height: 2rem;
+            flex-grow: 1;
+            padding-right: 2rem;
+            padding-left: 2rem;
         }
-   
     }
+
     
     &__toggle {
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+        @include tablet {
+            // flex-grow: 1;
+        }
+    }
+
+    &__toggle {
+        @include textStyle($secondary-color-Slate, 0.5rem, 1.125rem, 600);
+    }
+
+    &__nav-button {
+        border: none;
+        cursor: pointer;
+        &:active {
+            border: 1px solid grey;
+        }
     }
 }
