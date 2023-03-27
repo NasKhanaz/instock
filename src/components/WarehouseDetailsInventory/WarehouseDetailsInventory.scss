@@ -24,5 +24,21 @@
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+        @include tablet {
+            // flex-grow: 1;
+        }
+    }
+
+    &__toggle {
+        @include textStyle($secondary-color-Slate, 0.5rem, 1.125rem, 600);
+    }
+
+    &__nav-button {
+        border: none;
+        cursor: pointer;
+        &:active {
+            border: 1px solid grey;
+        }
     }
 }
