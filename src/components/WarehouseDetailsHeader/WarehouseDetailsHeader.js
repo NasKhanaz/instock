@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import "./WarehouseDetailsHeader.scss";
@@ -7,6 +7,7 @@ import "./WarehouseDetailsHeader.scss";
 function WarehouseDetailsHeader() {
   const [warehouseDetails, setWarehouseDetails] = useState(null);
   const { warehouseId } = useParams();
+  const { pathname } = useLocation();
 
   const navigate = useNavigate();
 
@@ -46,8 +47,13 @@ function WarehouseDetailsHeader() {
             {warehouseDetails.warehouse_name}
           </h1>
         </div>
-        <button className="warehouse-details-header__edit-button--mobile"></button>
+        <Link
+          to={`${pathname}/edit`}
+        >
+        <button className="warehouse-details-header__edit-button--mobile">
+        </button>
         <button className="warehouse-details-header__edit-button">Edit</button>
+        </Link>
       </header>
       <main className="warehouse-details">
         <div className="warehouse-details__address-container">
