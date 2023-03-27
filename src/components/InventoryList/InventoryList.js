@@ -7,8 +7,8 @@ function InventoryList({ inventoryArray }) {
     return (
         <>
             <div className="inventory__category-selector--wider">
-                <div clasName="inventory__left-box">
-                    <div className="inventory__toggle">
+                <div className="inventory__left-box">
+                    <div className="inventory__toggle-inventory">
                         <h2 className="inventory__selector">INVENTORY ITEM</h2>
                         <button className="inventory__nav-button">
                             <img
@@ -19,7 +19,7 @@ function InventoryList({ inventoryArray }) {
                         </button>
                     </div>    
             
-                    <div className="inventory__toggle">
+                    <div className="inventory__toggle-category">
                         <h2 className="inventory__selector">CATEGORY</h2>
                         <button className="inventory__nav-button">
                             <img
@@ -31,7 +31,7 @@ function InventoryList({ inventoryArray }) {
                     </div>
                 </div>  
                 <div className="inventory__middle-box">
-                    <div className="inventory__toggle">
+                    <div className="inventory__toggle-status">
                         <h2 className="inventory__selector">STATUS</h2>
                         <button className="inventory__nav-button">
                             <img
@@ -41,7 +41,7 @@ function InventoryList({ inventoryArray }) {
                             />
                         </button>
                     </div>
-                    <div className="inventory__toggle">
+                    <div className="inventory__toggle-qty">
                         <h2 className="inventory__selector">QTY</h2>
                         <button className="inventory__nav-button">
                             <img
@@ -51,7 +51,7 @@ function InventoryList({ inventoryArray }) {
                             />
                         </button>
                     </div>
-                    <div className="inventory__toggle">
+                    <div className="inventory__toggle-warehouse">
                         <h2 className="inventory__selector">WAREHOUSE</h2>
                         <button className="inventory__nav-button">
                             <img
@@ -63,8 +63,8 @@ function InventoryList({ inventoryArray }) {
                     </div>
                 </div>
                 <div className="inventory__right-box">    
-                    <div className="inventory__toggle">
-                        <h2 className="inventory__selector">ACTIONS</h2>
+                    <div className="inventory__toggle-actions">
+                        <h2 className="inventory__selector-actions">ACTIONS</h2>
                     </div>
                 </div>    
             </div>
