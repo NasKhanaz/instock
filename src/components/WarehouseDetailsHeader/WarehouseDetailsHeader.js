@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate } from "react-router-dom";
 import axios from "axios";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import "./WarehouseDetailsHeader.scss";
@@ -7,6 +7,12 @@ import "./WarehouseDetailsHeader.scss";
 function WarehouseDetailsHeader() {
   const [warehouseDetails, setWarehouseDetails] = useState(null);
   const { warehouseId } = useParams();
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(-1); // Take user back to previous page
+  };
 
   // Make a GET request to obtain the details for a specific warehouse based on its ID
   useEffect(() => {
@@ -34,6 +40,7 @@ function WarehouseDetailsHeader() {
             className="warehouse-details-header__back-arrow"
             src={backArrow}
             alt="back arrow"
+            onClick={handleClick}
           />
           <h1 className="warehouse-details-header__warehouse-name">
             {warehouseDetails.warehouse_name}
