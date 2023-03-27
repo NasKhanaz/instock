@@ -11,7 +11,6 @@ export default function InventoryModal({ id, name, show, onClose }) {
     const deleteInventory = () => {
         axios.delete(`http://localhost:8080/inventory/${id}`)
             .then((response) => {
-                alert(`Inventory ${name} has been deleted`);
                 window.location.reload();
             })
             .catch(error => console.log(error));

@@ -9,6 +9,9 @@
 
 .sorter {
     display: none;
+    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
+    background-color: rgba(247, 248, 249, 0.7);
+    border: none;
 
     @include tablet {
         @include flex (null, row);
@@ -75,6 +78,9 @@
     &__icon {
         @include flex (center, column);
         margin-left: .25rem;
+        border: none;
+        background-color: transparent;
+        cursor: pointer;
 
         &-icon {
             height: .75rem;
