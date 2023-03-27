@@ -25,6 +25,7 @@
 
         &:hover {
             background-color: $primary-color-Instock-Black;
+            cursor: pointer;
         }
 
         &--edit {
@@ -56,6 +57,7 @@
         &:hover {
             border: 1px solid $primary-color-Instock-Indigo;
             color: $primary-color-Instock-Indigo;
+            cursor: pointer;
         }
     }
 }

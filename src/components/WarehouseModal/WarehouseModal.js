@@ -19,7 +19,7 @@ export default function WarehouseModal({ id, warehouse, show, onClose }) {
     return (
         <div className="modal" onClick={() => onClose()}>
             <div className="modal__content" onClick={e => e.stopPropagation()}>
-                <button className="modal__close" onClick={() => onClose()}><img src={closeIcon} /></button>
+                <button className="modal__close" onClick={() => onClose()}><img src={closeIcon} alt="close icon" /></button>
                 <div className="modal__top-container">
                     <div className="modal__header">
                         <h1 className="modal__header-title">Delete {warehouse.warehouse_name} warehouse?</h1>

@@ -19,6 +19,16 @@
 
     &__left-container {
         display: flex;
+        align-items: center;
+        width: 80%;
+        margin-top: -0.5rem;
+    }
+
+    &__back-arrow {
+        height: 24px;
+        &:hover {
+            cursor: pointer;
+        }
     }
 
     &__warehouse-name {
@@ -39,6 +49,10 @@
         background-image: url("../../assets/Icons/edit-24px-white.svg");
         background-position: center;
         background-repeat: no-repeat;
+
+        &:hover {
+            cursor: pointer;
+        }
 
         @include tablet {
             display: none;
@@ -61,6 +75,10 @@
             background-position: left 0.75rem top 0.5rem;
             background-repeat: no-repeat;
             @include textStyle($primary-color-White, 0.875rem, 1.375rem, 600);
+        }
+
+        &:hover {
+            cursor: pointer;
         }
     }
 }

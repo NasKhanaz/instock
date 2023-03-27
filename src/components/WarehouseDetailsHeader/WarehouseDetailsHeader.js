@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useNavigate, useLocation, Link } from "react-router-dom";
 import axios from "axios";
 import backArrow from "../../assets/Icons/arrow_back-24px.svg";
 import "./WarehouseDetailsHeader.scss";
@@ -7,6 +7,13 @@ import "./WarehouseDetailsHeader.scss";
 function WarehouseDetailsHeader() {
   const [warehouseDetails, setWarehouseDetails] = useState(null);
   const { warehouseId } = useParams();
+  const { pathname } = useLocation();
+
+  const navigate = useNavigate();
+
+  const handleClick = () => {
+    navigate(-1); // Take user back to previous page
+  };
 
   // Make a GET request to obtain the details for a specific warehouse based on its ID
   useEffect(() => {
@@ -23,7 +30,7 @@ function WarehouseDetailsHeader() {
   }, [warehouseId]); // Use warehouseId for dependency so this request is made if the warehouseId changes
   
   if (!warehouseDetails) {
-    return <h1>Warehouse Details Loading...</h1>
+    return <h1>This warehouse does not exist</h1>
   }
 
   return (
@@ -34,17 +41,23 @@ function WarehouseDetailsHeader() {
             className="warehouse-details-header__back-arrow"
             src={backArrow}
             alt="back arrow"
+            onClick={handleClick}
           />
           <h1 className="warehouse-details-header__warehouse-name">
             {warehouseDetails.warehouse_name}
           </h1>
         </div>
-        <button className="warehouse-details-header__edit-button--mobile"></button>
+        <Link
+          to={`${pathname}/edit`}
+        >
+        <button className="warehouse-details-header__edit-button--mobile">
+        </button>
         <button className="warehouse-details-header__edit-button">Edit</button>
+        </Link>
       </header>
       <main className="warehouse-details">
         <div className="warehouse-details__address-container">
-          <h2 className="dwarehouse-etails__heading">WAREHOUSE ADDRESS:</h2>
+          <h2 className="warehouse-details__heading">WAREHOUSE ADDRESS:</h2>
           <p className="warehouse-details__info warehouse-details__address">{`${warehouseDetails.address}, ${warehouseDetails.city}, ${warehouseDetails.country}`}</p>
         </div>
         <div className="warehouse-details__contact-container">

@@ -6,6 +6,7 @@
     display: flex;
     width: 100%;
     padding: 0rem 1rem;
+    max-height: 5rem;
 
     @include tablet {
         width: 24.65%;
@@ -50,6 +51,7 @@
             text-decoration: underline;
             color: $primary-color-White;
             font-weight: 600;
+            cursor: pointer;
         }
 
         &--left {
