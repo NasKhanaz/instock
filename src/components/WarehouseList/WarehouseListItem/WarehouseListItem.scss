@@ -9,12 +9,15 @@
 .wh-ls-item {
     width: 100%;
     background-color: $primary-color-White;
-    box-shadow: 0px 2px 5px rgba(19, 24, 44, 0.1);
     padding: 1rem 1.5rem;
     @include flex(null, row);
     flex-wrap: wrap;
-    // border-top: 1px solid $secondary-color-Slate;
+    border-top: 1px solid $secondary-color-Cloud;
     margin-top: 1px;
+
+    &--special {
+        border-top: none;
+    }
 
     &:hover {
         background-color: rgba(46, 102, 230, .07);
@@ -46,9 +49,6 @@
             flex-grow: 1;
         }
 
-        @include desktop {
-            // width: 100%;
-        }
     }
 
     &__contact {

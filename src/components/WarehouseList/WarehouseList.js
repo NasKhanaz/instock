@@ -28,8 +28,8 @@ export default function WarehouseList() {
         <>
             <WarehouseListHeader />
             <WarehouseSorter />
-            {warehouseData.map((warehouse) => (
-                < WarehouseListItem key={warehouse.id} warehouse={warehouse} />
+            {warehouseData.map((warehouse, index) => (
+                < WarehouseListItem key={warehouse.id} warehouse={warehouse} mapIndex={index} />
             ))
             }
         </>
