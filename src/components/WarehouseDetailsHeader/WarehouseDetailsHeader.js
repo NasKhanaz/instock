@@ -30,7 +30,7 @@ function WarehouseDetailsHeader() {
   }, [warehouseId]); // Use warehouseId for dependency so this request is made if the warehouseId changes
   
   if (!warehouseDetails) {
-    return <h1>Warehouse Details Loading...</h1>
+    return <h1>This warehouse does not exist</h1>
   }
 
   return (
