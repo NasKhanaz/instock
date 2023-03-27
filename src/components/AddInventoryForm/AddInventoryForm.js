@@ -19,7 +19,7 @@ function AddInventoryForm() {
 
   // Item Availability States
   const [status, setStatus] = useState("");
-  const [quantity, setQuantity] = useState("0");
+  const [quantity, setQuantity] = useState("");
   const [warehouseName, setWarehouseName] = useState("");
   const [validStatus, setValidStatus] = useState(false);
   const [validQuantity, setValidQuantity] = useState(false);
@@ -77,14 +77,14 @@ function AddInventoryForm() {
     }
 
     //Checks to see if there is a valid status, and if it is in stock, then checks quantity
-    if (validStatus && status === "In stock") {
-      if (!quantity) {
-        setValidQuantity("error");
-        isFormValid = false;
-      } else {
-        setValidQuantity(true);
-      }
-    }
+    // if (validStatus && status === "In stock") {
+    //   if (!quantity) {
+    //     setValidQuantity("error");
+    //     isFormValid = false;
+    //   } else {
+    //     setValidQuantity(true);
+    //   }
+    // }
 
     if (!warehouseName) {
       setValidWarehouse("error");
@@ -106,14 +106,19 @@ function AddInventoryForm() {
         (element) => element.warehouse_name === warehouseName
       );
       const warehouse_id = myWarehouse.id;
-
+      console.log(itemName);
+      console.log(description);
+      console.log(category);
+      console.log(status);
+      console.log(quantity);
+      console.log(warehouse_id);
       axios
         .post("http://localhost:8080/inventory", {
           item_name: itemName,
           description: description,
           category: category,
           status: status,
-          quantity: 0 || quantity,
+          quantity: quantity,
           warehouse_id: warehouse_id,
         })
         .then((response) => {
