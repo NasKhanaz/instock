@@ -43,4 +43,10 @@
             @include textStyle($primary-color-Instock-Black, 2rem, 2.5rem, 600);
         }
     }
+
+    &__back-arrow {
+        &:hover {
+            cursor: pointer;
+        }
+    }
 }
