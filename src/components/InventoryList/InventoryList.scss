@@ -12,17 +12,83 @@
             @include textStyle($secondary-color-Slate, 0.75rem, 1.125rem, 600);
             display: contents;
             display: flex;
-            justify-content: space-around;
+            justify-content: space-between;
             align-items: center;
             background-color: $background-color-Light-Grey;
             height: 2rem;
+            flex-grow: 1;
+            padding-right: 2rem;
+            padding-left: 2rem;
         }
-   
     }
+
+    &__left-box {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: 33%;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+        
+        }
+
+    }
+
+    &__middle-box {
+        display: flex;
+        flex-direction: column;
+        width: 50%;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            align-items: center;
+            width: 40%;
+            justify-content: space-between;
+
+        }
+    }
+
+    &__right-box {
+        padding-top: 1rem;
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+
+        @include tablet {
+            display: flex;
+            flex-direction: row;
+            width: auto;
+            width: 5rem;
+            padding-top: 0;
+        }
+    }
+
     
     &__toggle {
         display: flex;
         justify-content: space-around;
         align-items: center;
+
+        @include tablet {
+            // flex-grow: 1;
+        }
+    }
+
+    &__toggle {
+        @include textStyle($secondary-color-Slate, 0.5rem, 1.125rem, 600);
+    }
+
+    &__nav-button {
+        border: none;
+        cursor: pointer;
+        &:active {
+            border: 1px solid grey;
+        }
     }
 }
