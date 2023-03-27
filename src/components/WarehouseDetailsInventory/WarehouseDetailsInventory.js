@@ -63,7 +63,7 @@ function WarehouseDetailsInventory() {
             <h2 className="inventory__selector">ACTIONS</h2>
             </div>
         </div>
-        <div className="inventory__permutation">
+        <div className="inventory__exist-message">
             No inventory exists for this warehouse
         </div>
         </>
