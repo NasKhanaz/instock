@@ -1,6 +1,7 @@
 import ItemFormText from "../ItemFormText/ItemFormText";
 import ItemFormRadio from "../ItemFormRadio/ItemFormRadio";
 import "./ItemAvailability.scss";
+import WarehouseDropDown from "../WarehouseDropDown/WarehouseDropDown";
 
 function ItemAvailability(props) {
   return (
@@ -26,6 +27,17 @@ function ItemAvailability(props) {
         }
         errorMessageClassName={
           props.validQuantity === "error" ? "form-field-error--show" : ""
+        }
+      />
+      <WarehouseDropDown
+        labelText={"Warehouse"}
+        state={props.warehouseName}
+        setState={props.setWarehouseName}
+        extraInputClassName={
+          props.validWarehouse === "error" ? "form-field-input--error" : ""
+        }
+        errorMessageClassName={
+          props.validWarehouse === "error" ? "form-field-error--show" : ""
         }
       />
     </section>
