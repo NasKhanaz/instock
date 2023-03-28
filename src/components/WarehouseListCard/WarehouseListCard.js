@@ -16,54 +16,54 @@ function WarehouseListCard({ id, name, category, status, quantity }) {
 
     return (
 
-        <li className="inventory__listcard-item">
+        <li className="alt-inventory__listcard-item">
             <div className="inventory__listcard">
 
-                <div className="inventory__left-box">
+                <div className="alt-inventory__left-box-alt">
 
-                    <div className="inventory__item-container">
-                        <h2 className="inventory__item">INVENTORY ITEM</h2>
-                        <div className="inventory__item-link">
-                            <div className="inventory__text-link">{name}</div>
+                    <div className="alt-inventory__item-container-alt">
+                        <h2 className="alt-inventory__item">INVENTORY ITEM</h2>
+                        <div className="alt-inventory__item-link">
+                            <div className="alt-inventory__text-link">{name}</div>
                             <img
-                                className="inventory__img-chevron"
+                                className="alt-inventory__img-chevron"
                                 src={chevronIcon}
                                 alt="chevron icon"
                             />
                         </div>
                     </div>
 
-                    <div className="inventory__category-container">
-                        <h2 className="inventory__category">CATEGORY</h2>
-                        <p className="inventory__category-render">{category}</p>
+                    <div className="alt-inventory__category-container-alt">
+                        <h2 className="alt-inventory__category">CATEGORY</h2>
+                        <p className="alt-inventory__category-render">{category}</p>
                     </div>
                 </div>
 
-                <div className="inventory__middle-box">
+                <div className="alt-inventory__middle-box-alt">
 
-                    <div className="inventory__status-container">
-                        <h2 className="inventory__status">STATUS</h2>
-                        <div className={status === "In Stock" ? "inventory__status-tag--in" : "inventory__status-tag--out"}>{status}</div>
+                    <div className="alt-inventory__status-container-alt">
+                        <h2 className="alt-inventory__status">STATUS</h2>
+                        <div className={status === "In Stock" ? "alt-inventory__status-tag--in" : "alt-inventory__status-tag--out"}>{status}</div>
                     </div>
-                    <div className="inventory__qty-container">
-                        <h2 className="inventory__qty">QTY</h2>
-                        <p className="inventory__qty-count">{quantity}</p>
+                    <div className="alt-inventory__qty-container-alt">
+                        <h2 className="alt-inventory__qty">QTY</h2>
+                        <p className="alt-inventory__qty-count">{quantity}</p>
                     </div>
 
                 </div>
 
-                <div className="inventory__right-box">
-                    <button className="inventory__button" onClick={() => setShow(true)} >
+                <div className="alt-inventory__right-box-alt">
+                    <button className="alt-inventory__button" onClick={() => setShow(true)} >
                         <img
-                            className="inventory__delete"
+                            className="alt-inventory__delete"
                             src={deleteIcon}
                             alt="delete feature"
                         />
                     </button>
                     <InventoryModal onClose={onClose} show={show} name={name} id={id} />
-                    <button className="inventory__button">
+                    <button className="alt-inventory__button">
                         <img
-                            className="inventory__edit"
+                            className="alt-inventory__edit"
                             src={editIcon}
                             alt="delete feature"
                         />

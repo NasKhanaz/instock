@@ -3,7 +3,7 @@
 @use "../../styles/partials/mixins" as *;
 
 
-.inventory {
+.alt-inventory {
 
     padding-left: 1rem;
     padding-right: 1rem;
@@ -40,16 +40,15 @@
         }
     }
 
-    &__left-box {
+    &__left-box-alt {
         display: flex;
         flex-direction: column;
         width: 50%;
 
         @include tablet {
-            display: flex;
-            flex-direction: row;
-            width: 33%;
-            justify-content: space-between;
+            @include flex(space-between, row);
+            flex-grow: 1;
+            width: 40%
         }
 
     }
@@ -108,19 +107,15 @@
         }
     }
 
-    &__middle-box {
+    &__middle-box-alt {
         display: flex;
         flex-direction: column;
         width: 50%;
 
         @include tablet {
-            display: flex;
-            flex-direction: row;
-            width: auto;
-            align-items: center;
-            width: 40%;
-            justify-content: space-between;
-
+            @include flex(space-between, row);
+            flex-grow: 1;
+            width: 50%
         }
     }
 
@@ -187,7 +182,7 @@
         }
     }
 
-    &__right-box {
+    &__right-box-alt {
         padding-top: 1rem;
         display: flex;
         justify-content: space-between;
@@ -197,6 +192,7 @@
             display: flex;
             flex-direction: row;
             padding-top: 0;
+            width: auto;
 
 
         }
@@ -213,4 +209,38 @@
     }
 
 
+}
+
+.alt-inventory__item-container-alt {
+    @include tablet {
+        width: 10rem;
+        flex-grow: 1;
+    }
+}
+
+.alt-inventory__category-container-alt {
+    @include tablet {
+        width: 7rem;
+        flex-grow: 1;
+    }
+}
+
+.alt-inventory__status-container-alt {
+    @include tablet {
+        width: 10rem;
+        flex-grow: 1;
+    }
+}
+
+.alt-inventory__qty-container-alt {
+    @include tablet {
+        width: 8rem;
+        flex-grow: 1;
+    }
+}
+
+.alt-inventory__edit {
+    @include tablet {
+        margin-left: 1rem;
+    }
 }
