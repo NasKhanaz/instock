@@ -5,7 +5,9 @@ function InventoryItemDetails() {
 
   return (
     <>
-      <InventoryItemDescription />
+      <main className="inventory-details-page">
+        <InventoryItemDescription />
+      </main>
     </>
   );
 }
