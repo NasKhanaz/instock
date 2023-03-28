@@ -29,8 +29,10 @@ function Inventory() {
 
   return (
     <>
-      <InventoryListHeader />
-      <InventoryList inventoryArray={inventoryDetails} />
+      <main className="details-page">
+        <InventoryListHeader />
+        <InventoryList inventoryArray={inventoryDetails} />
+      </main>
     </>
   );
 }
