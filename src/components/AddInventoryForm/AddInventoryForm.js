@@ -76,12 +76,19 @@ function AddInventoryForm() {
       setValidStatus(true);
     }
 
+    // Check quantity when status has yet to be selected or when in stock
     if (!quantity) {
-      setValidQuantity("error");
-      isFormValid = false;
+        setValidQuantity("error");
+        isFormValid = false;
     } else {
-      setValidQuantity(true);
+        setValidQuantity(true);
     }
+
+    // When out of stock is selected, the quantity field will dissapear so it can be set to 0 and true to hide any error display
+    if (status === "Out of Stock") {
+      setValidQuantity(true);
+      setQuantity(0);
+    } 
 
     if (!warehouseName || warehouseName === "Please select") {
       setValidWarehouse("error");
