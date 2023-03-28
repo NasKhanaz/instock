@@ -11,22 +11,22 @@ function AddInventoryForm({ defaultStateValues }) {
   const navigate = useNavigate();
   const inventoryId = inventoryObject.itemId;
 
-  console.log(defaultStateValues[0].item_name);
+  console.log(defaultStateValues.item_name);
   // Item Details States
-  const [itemName, setItemName] = useState(defaultStateValues[0].item_name);
+  const [itemName, setItemName] = useState(defaultStateValues.item_name);
   const [description, setDescription] = useState(
-    defaultStateValues[0].description
+    defaultStateValues.description
   );
-  const [category, setCategory] = useState(defaultStateValues[0].category);
+  const [category, setCategory] = useState(defaultStateValues.category);
   const [validItemName, setValidItemName] = useState(false);
   const [validDescription, setValidDescription] = useState(false);
   const [validCategory, setValidCategory] = useState(false);
 
   // Item Availability States
-  const [status, setStatus] = useState(defaultStateValues[0].status);
-  const [quantity, setQuantity] = useState(defaultStateValues[0].quantity);
+  const [status, setStatus] = useState(defaultStateValues.status);
+  const [quantity, setQuantity] = useState(defaultStateValues.quantity);
   const [warehouseName, setWarehouseName] = useState(
-    defaultStateValues[0].warehouse_name
+    defaultStateValues.warehouse_name
   );
   const [validStatus, setValidStatus] = useState(false);
   const [validQuantity, setValidQuantity] = useState(false);
@@ -171,7 +171,9 @@ function AddInventoryForm({ defaultStateValues }) {
           />
           <FormCTAButton
             type={"submit"}
-            className={"form-cta-button--primary"}
+            className={
+              "form-cta-button--primary form-cta-button--primary--edit"
+            }
             buttonText={"Save"}
           />
         </div>
