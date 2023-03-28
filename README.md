@@ -1,3 +1,12 @@
+Instock-Jenny
+Final Project Submission
+
+Group Members:
+Nasrullah Khan
+Joao Camara
+Tristan Jagan
+Erik Cederwall
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
