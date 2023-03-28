@@ -21,6 +21,7 @@ function ItemDropDown({
   }, []);
   const categoryList = inventoryList.map((element) => element.category);
   const filteredCategoryList = [...new Set(categoryList)];
+  filteredCategoryList.unshift("Please select");
 
   const handleChange = (event) => {
     setState(event.target.value);

@@ -62,7 +62,7 @@ function AddInventoryForm() {
       setValidDescription(true);
     }
 
-    if (!category) {
+    if (!category || category === "Please select") {
       setValidCategory("error");
       isFormValid = false;
     } else {
@@ -76,17 +76,14 @@ function AddInventoryForm() {
       setValidStatus(true);
     }
 
-    //Checks to see if there is a valid status, and if it is in stock, then checks quantity
-    if (validStatus && status === "In stock") {
-      if (!quantity) {
-        setValidQuantity("error");
-        isFormValid = false;
-      } else {
-        setValidQuantity(true);
-      }
+    if (!quantity) {
+      setValidQuantity("error");
+      isFormValid = false;
+    } else {
+      setValidQuantity(true);
     }
 
-    if (!warehouseName) {
+    if (!warehouseName || warehouseName === "Please select") {
       setValidWarehouse("error");
       isFormValid = false;
     } else {
@@ -106,12 +103,7 @@ function AddInventoryForm() {
         (element) => element.warehouse_name === warehouseName
       );
       const warehouse_id = myWarehouse.id;
-      console.log(itemName);
-      console.log(description);
-      console.log(category);
-      console.log(status);
-      console.log(quantity);
-      console.log(warehouse_id);
+
       axios
         .post("http://localhost:8080/inventory", {
           item_name: itemName,

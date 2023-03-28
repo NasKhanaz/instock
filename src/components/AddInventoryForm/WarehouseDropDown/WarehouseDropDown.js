@@ -20,8 +20,8 @@ function WarehouseDropDown({
     });
   }, []);
   const warehouseNames = warehouseList.map((element) => element.warehouse_name);
-  //const filteredCategoryList = [...new Set(categoryList)];
-  console.log(warehouseNames);
+  const filteredWarehouseList = [...new Set(warehouseNames)];
+  filteredWarehouseList.unshift("Please select");
 
   const handleChange = (event) => {
     setState(event.target.value);
@@ -37,7 +37,7 @@ function WarehouseDropDown({
         value={state}
         onChange={handleChange}
       >
-        {warehouseNames.map((warehouse_name, index) => (
+        {filteredWarehouseList.map((warehouse_name, index) => (
           <option key={index} value={warehouse_name}>
             {warehouse_name}
           </option>
