@@ -88,7 +88,8 @@ function AddInventoryForm() {
     if (status === "Out of Stock") {
       setValidQuantity(true);
       setQuantity(0);
-    } 
+      isFormValid = true;
+    }
 
     if (!warehouseName || warehouseName === "Please select") {
       setValidWarehouse("error");
