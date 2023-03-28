@@ -19,7 +19,6 @@ function InventoryItemDescription() {
         axios
         .get(`http://localhost:8080/inventory/${itemId}`)
         .then((response) => {
-            console.log(response)
             if (response.status === 200) {
                 setInventoryItemDetails(response.data);
             }

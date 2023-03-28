@@ -10,7 +10,6 @@ function ItemFormRadio({
 }) {
   const handleChange = (event) => {
     setState(event.target.value);
-    console.log(event.target.value);
   };
 
   return (
