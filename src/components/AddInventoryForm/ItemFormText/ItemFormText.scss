@@ -73,3 +73,7 @@
         @include textStyle($supporting-color-Red, 0.75rem, 1.125rem, 400);
     }
 }
+
+.form-field--hide {
+    display: none;
+}

@@ -5,8 +5,8 @@ import "./ItemDetails.scss";
 
 function ItemDetails(props) {
   return (
-    <section className="contact-details-section">
-      <h1 className="contact-details-section__title">Item Details</h1>
+    <section className="item-details-section">
+      <h1 className="item-details-section__title">Item Details</h1>
       <ItemFormText
         labelText={"Item Name"}
         state={props.itemName}

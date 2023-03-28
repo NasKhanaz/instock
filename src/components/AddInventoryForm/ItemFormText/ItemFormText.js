@@ -4,6 +4,7 @@ import "./ItemFormText.scss";
 function ItemFormText({
   errorMessageClassName,
   extraInputClassName,
+  toggleHideClass,
   labelText,
   state,
   setState,
@@ -14,11 +15,14 @@ function ItemFormText({
 
   return (
     <div className="form-field-container">
-      <label className="form-field-label" htmlFor={labelText}>
+      <label
+        className={`form-field-label ${toggleHideClass}`}
+        htmlFor={labelText}
+      >
         {labelText}
       </label>
       <input
-        className={`form-field-input ${extraInputClassName}`}
+        className={`form-field-input ${extraInputClassName} ${toggleHideClass}`}
         type="text"
         id={labelText}
         name={labelText}

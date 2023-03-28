@@ -25,54 +25,57 @@ function WarehouseDetailsInventory() {
 
     if (!warehouseInventory) {
         return (
-            <>
-                <div className="inventory__category-selector--wider">
-                    <div className="inventory__left">
-                        <div className="inventory__toggle">
-                            <h2 className="inventory__selector">INVENTORY ITEM</h2>
-                            <img
-                                className="inventory__img-selector"
-                                src={sortDefaultIcon}
-                                alt="sort default icon"
-                            />
-                        </div>
-                        <div className="inventory__toggle">
-                            <h2 className="inventory__selector">CATEGORY</h2>
-                            <img
-                                className="inventory__img-selector"
-                                src={sortDefaultIcon}
-                                alt="sort default icon"
-                            />
-                        </div>
-                    </div>
-                    <div className="inventory__middle">
-                        <div className="inventory__toggle">
-                            <h2 className="inventory__selector">STATUS</h2>
-                            <img
-                                className="inventory__img-selector"
-                                src={sortDefaultIcon}
-                                alt="sort default icon"
-                            />
-                        </div>
-                        <div className="inventory__toggle">
-                            <h2 className="inventory__selector">QTY</h2>
-                            <img
-                                className="inventory__img-selector"
-                                src={sortDefaultIcon}
-                                alt="sort default icon"
-                            />
-                        </div>
-                    </div>
-                    <div className="inventory__right">
-                        <div className="inventory__toggle">
-                            <h2 className="inventory__selector">ACTIONS</h2>
-                        </div>
-                    </div>
-                    <div className="inventory__exist-message">
-                        No inventory exists for this warehouse
-                    </div>
+          <>
+            <div className="inventory__exist-message--mobile">
+              No inventory exists for this warehouse
+            </div>
+            <div className="inventory__category-selector--wider">
+              <div className="inventory__left">
+                <div className="inventory__toggle">
+                  <h2 className="inventory__selector">INVENTORY ITEM</h2>
+                  <img
+                    className="inventory__img-selector"
+                    src={sortDefaultIcon}
+                    alt="sort default icon"
+                  />
                 </div>
-            </>
+                <div className="inventory__toggle">
+                  <h2 className="inventory__selector">CATEGORY</h2>
+                  <img
+                    className="inventory__img-selector"
+                    src={sortDefaultIcon}
+                    alt="sort default icon"
+                  />
+                </div>
+              </div>
+              <div className="inventory__middle">
+                <div className="inventory__toggle">
+                  <h2 className="inventory__selector">STATUS</h2>
+                  <img
+                    className="inventory__img-selector"
+                    src={sortDefaultIcon}
+                    alt="sort default icon"
+                  />
+                </div>
+                <div className="inventory__toggle">
+                  <h2 className="inventory__selector">QTY</h2>
+                  <img
+                    className="inventory__img-selector"
+                    src={sortDefaultIcon}
+                    alt="sort default icon"
+                  />
+                </div>
+              </div>
+              <div className="inventory__right">
+                <div className="inventory__toggle">
+                  <h2 className="inventory__selector">ACTIONS</h2>
+                </div>
+              </div>
+              <div className="inventory__exist-message">
+                No inventory exists for this warehouse
+              </div>
+            </div>
+          </>
         );
     }
 

@@ -25,6 +25,8 @@ function AddInventoryForm() {
   const [validQuantity, setValidQuantity] = useState(false);
   const [validWarehouse, setValidWarehouse] = useState(false);
 
+  let outOfStockQuantity;
+
   //obtains list of warehouse items
   const [warehouseList, setWarehouseList] = useState([]);
   useEffect(() => {
@@ -76,11 +78,20 @@ function AddInventoryForm() {
       setValidStatus(true);
     }
 
+    // Check quantity when status has yet to be selected or when in stock
     if (!quantity) {
-      setValidQuantity("error");
-      isFormValid = false;
+        setValidQuantity("error");
+        isFormValid = false;
     } else {
+        setValidQuantity(true);
+    }
+
+    // When out of stock is selected, the quantity field will dissapear so it can be set to 0 and true to hide any error display
+    if (status === "Out of Stock") {
       setValidQuantity(true);
+      setQuantity(0);
+      outOfStockQuantity = 0; // Use this variable to avoid the asynchronous wait to set quantity
+      isFormValid = true;
     }
 
     if (!warehouseName || warehouseName === "Please select") {
@@ -110,7 +121,7 @@ function AddInventoryForm() {
           description: description,
           category: category,
           status: status,
-          quantity: quantity,
+          quantity: status === "Out of Stock" ? outOfStockQuantity : quantity, // Use a variable if out of stock to avoid needing to wait for asynchronous state to be set to 0
           warehouse_id: warehouse_id,
         })
         .then((response) => {

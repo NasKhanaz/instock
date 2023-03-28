@@ -11,26 +11,27 @@ function AddInventoryForm({ defaultStateValues }) {
   const navigate = useNavigate();
   const inventoryId = inventoryObject.itemId;
 
-  console.log(defaultStateValues[0].item_name);
   // Item Details States
-  const [itemName, setItemName] = useState(defaultStateValues[0].item_name);
+  const [itemName, setItemName] = useState(defaultStateValues.item_name);
   const [description, setDescription] = useState(
-    defaultStateValues[0].description
+    defaultStateValues.description
   );
-  const [category, setCategory] = useState(defaultStateValues[0].category);
+  const [category, setCategory] = useState(defaultStateValues.category);
   const [validItemName, setValidItemName] = useState(false);
   const [validDescription, setValidDescription] = useState(false);
   const [validCategory, setValidCategory] = useState(false);
 
   // Item Availability States
-  const [status, setStatus] = useState(defaultStateValues[0].status);
-  const [quantity, setQuantity] = useState(defaultStateValues[0].quantity);
+  const [status, setStatus] = useState(defaultStateValues.status);
+  const [quantity, setQuantity] = useState(defaultStateValues.quantity);
   const [warehouseName, setWarehouseName] = useState(
-    defaultStateValues[0].warehouse_name
+    defaultStateValues.warehouse_name
   );
   const [validStatus, setValidStatus] = useState(false);
   const [validQuantity, setValidQuantity] = useState(false);
   const [validWarehouse, setValidWarehouse] = useState(false);
+
+  let outOfStockQuantity;
 
   //obtains list of warehouse items
   const [warehouseList, setWarehouseList] = useState([]);
@@ -83,11 +84,20 @@ function AddInventoryForm({ defaultStateValues }) {
       setValidStatus(true);
     }
 
+    // Check quantity when status has yet to be selected or when in stock
     if (!quantity) {
       setValidQuantity("error");
       isFormValid = false;
     } else {
       setValidQuantity(true);
+    }
+
+    // When out of stock is selected, the quantity field will dissapear so it can be set to 0 and true to hide any error display
+    if (status === "Out of Stock") {
+      setValidQuantity(true);
+      setQuantity(0);
+      outOfStockQuantity = 0; // Use this variable to avoid the asynchronous wait to set quantity
+      isFormValid = true;
     }
 
     if (!warehouseName || warehouseName === "Please select") {
@@ -110,7 +120,6 @@ function AddInventoryForm({ defaultStateValues }) {
         (element) => element.warehouse_name === warehouseName
       );
       const warehouse_id = myWarehouse.id;
-      console.log(warehouse_id);
 
       axios
         .put(`http://localhost:8080/inventory/${inventoryId}`, {
@@ -118,7 +127,7 @@ function AddInventoryForm({ defaultStateValues }) {
           description: description,
           category: category,
           status: status,
-          quantity: quantity,
+          quantity: status === "Out of Stock" ? outOfStockQuantity : quantity, // Use a variable if out of stock to avoid needing to wait for asynchronous state to be set to 0,
           warehouse_id: warehouse_id,
         })
         .then((response) => {
@@ -171,7 +180,9 @@ function AddInventoryForm({ defaultStateValues }) {
           />
           <FormCTAButton
             type={"submit"}
-            className={"form-cta-button--primary"}
+            className={
+              "form-cta-button--primary form-cta-button--primary--edit"
+            }
             buttonText={"Save"}
           />
         </div>

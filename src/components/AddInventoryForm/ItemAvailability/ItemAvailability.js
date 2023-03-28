@@ -28,6 +28,9 @@ function ItemAvailability(props) {
         errorMessageClassName={
           props.validQuantity === "error" ? "form-field-error--show" : ""
         }
+        toggleHideClass={
+          props.status === "Out of Stock" ? "form-field--hide" : ""
+        }
       />
       <WarehouseDropDown
         labelText={"Warehouse"}
