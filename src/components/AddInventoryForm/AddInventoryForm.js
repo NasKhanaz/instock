@@ -77,14 +77,14 @@ function AddInventoryForm() {
     }
 
     //Checks to see if there is a valid status, and if it is in stock, then checks quantity
-    // if (validStatus && status === "In stock") {
-    //   if (!quantity) {
-    //     setValidQuantity("error");
-    //     isFormValid = false;
-    //   } else {
-    //     setValidQuantity(true);
-    //   }
-    // }
+    if (validStatus && status === "In stock") {
+      if (!quantity) {
+        setValidQuantity("error");
+        isFormValid = false;
+      } else {
+        setValidQuantity(true);
+      }
+    }
 
     if (!warehouseName) {
       setValidWarehouse("error");
