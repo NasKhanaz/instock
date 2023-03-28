@@ -19,6 +19,7 @@
     border-radius: 20px;
     border: 1px solid $secondary-color-Cloud;
     margin-bottom: 1rem;
+    resize: none;
 
     &--error {
         border: 1px solid $supporting-color-Red;
