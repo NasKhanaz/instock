@@ -18,6 +18,10 @@
         margin: 0rem 2.5rem;
     }
 
+    &__arrow {
+        cursor: pointer;
+    }
+
     &__left-container {
         display: flex;
     }
@@ -41,6 +45,11 @@
         background-position: center;
         background-repeat: no-repeat;
 
+        &:hover {
+            cursor: pointer;
+            background-color: $background-color-Graphite;
+        }
+
         @include tablet {
             display: none;
         }
@@ -62,6 +71,11 @@
             background-position: left 0.75rem top 0.5rem;
             background-repeat: no-repeat;
             @include textStyle($primary-color-White, 0.875rem, 1.375rem, 600);
+        }
+
+        &:hover {
+            cursor: pointer;
+            background-color: $background-color-Graphite;
         }
     }
 }
